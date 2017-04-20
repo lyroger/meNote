@@ -1,0 +1,43 @@
+//
+
+#ifndef Common_MarkWords_h
+#define Common_MarkWords_h
+
+/********************** message ****************************/
+
+#pragma mark - 提示语
+
+#pragma mark 弹出视图提示语
+
+#define AlertTitle @"温馨提示"
+#define AlertCancel @"取消"
+#define AlertExit @"退出"
+#define AlertConfirm @"确定"
+#define AlertClose @"关闭"
+#define AlertUpgrade @"去升级"
+#define AlertUpDate @"立即更新"
+
+#pragma mark 网络交互提示语
+
+#define kNetworkWithoutInternet @"网络异常，请检查网络！"
+#define kNetworkWithoutData @"暂无数据"
+#define kNetworkLoading @"加载中..."
+#define kNetworkLoadFailed @"加载失败"
+#define kNetworkSaveFailed @"保存失败"
+#define kNetworkWaitting @"请稍候..."
+
+#define kBankDataOfNearByMembers @"没有数据哦，亲"
+
+#define kAccountLogining @"登录..."
+#define kAccountLoginSuccess @"登录成功！"
+#define kAccoutRegistering @"注册中..."
+#define kAccountRegisterSuccsee @"注册成功！"
+
+#pragma mark 配置项
+#define kPayType  @[@"一次性付款",@"公积金贷款",@"商业贷款",@"组合贷款",@"分期付款"]
+
+#define kTagColors @[UIColorHex(0xffc42f),UIColorHex(0x02b0f0),UIColorHex(0xff6158),UIColorHex(0x29d043),UIColorHex(0x30cda0)];
+
+/********************** message ****************************/
+
+#endif /* Common_MarkWords_h */
