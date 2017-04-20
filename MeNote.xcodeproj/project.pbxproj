@@ -1,0 +1,723 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0144EB3D9DA5BE0BD06512B0 /* libPods-MeNoteUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 187C4207798A42DECD41C514 /* libPods-MeNoteUITests.a */; };
+		A75746671EA8607C008FDC6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A75746661EA8607C008FDC6A /* main.m */; };
+		A757466A1EA8607C008FDC6A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A75746691EA8607C008FDC6A /* AppDelegate.m */; };
+		A757466D1EA8607C008FDC6A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A757466C1EA8607C008FDC6A /* ViewController.m */; };
+		A75746701EA8607C008FDC6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A757466E1EA8607C008FDC6A /* Main.storyboard */; };
+		A75746721EA8607C008FDC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A75746711EA8607C008FDC6A /* Assets.xcassets */; };
+		A75746751EA8607C008FDC6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75746731EA8607C008FDC6A /* LaunchScreen.storyboard */; };
+		A75746801EA8607C008FDC6A /* MeNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A757467F1EA8607C008FDC6A /* MeNoteTests.m */; };
+		A757468B1EA8607C008FDC6A /* MeNoteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A757468A1EA8607C008FDC6A /* MeNoteUITests.m */; };
+		CACAD3F4C528231F40620FA5 /* libPods-MeNoteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA19F26FB8A832E6A413BBD8 /* libPods-MeNoteTests.a */; };
+		E394E689630C105F3EFCAE05 /* libPods-MeNote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 783733AA40E8923876C0573D /* libPods-MeNote.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A757467C1EA8607C008FDC6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A757465A1EA8607C008FDC6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A75746611EA8607C008FDC6A;
+			remoteInfo = MeNote;
+		};
+		A75746871EA8607C008FDC6A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A757465A1EA8607C008FDC6A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A75746611EA8607C008FDC6A;
+			remoteInfo = MeNote;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		187C4207798A42DECD41C514 /* libPods-MeNoteUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MeNoteUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67DE411426EB5DD6A0D57C38 /* Pods-MeNoteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeNoteUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeNoteUITests/Pods-MeNoteUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		783733AA40E8923876C0573D /* libPods-MeNote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MeNote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9804AF3799175021F3971B65 /* Pods-MeNoteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeNoteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeNoteTests/Pods-MeNoteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		99FB44049347194E04313673 /* Pods-MeNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeNote.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeNote/Pods-MeNote.release.xcconfig"; sourceTree = "<group>"; };
+		A75746621EA8607C008FDC6A /* MeNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A75746661EA8607C008FDC6A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A75746681EA8607C008FDC6A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A75746691EA8607C008FDC6A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A757466B1EA8607C008FDC6A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A757466C1EA8607C008FDC6A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A757466F1EA8607C008FDC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A75746711EA8607C008FDC6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A75746741EA8607C008FDC6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A75746761EA8607C008FDC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A757467B1EA8607C008FDC6A /* MeNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A757467F1EA8607C008FDC6A /* MeNoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeNoteTests.m; sourceTree = "<group>"; };
+		A75746811EA8607C008FDC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A75746861EA8607C008FDC6A /* MeNoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeNoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A757468A1EA8607C008FDC6A /* MeNoteUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeNoteUITests.m; sourceTree = "<group>"; };
+		A757468C1EA8607C008FDC6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B489829A9BD35AB5450095AC /* Pods-MeNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeNote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeNote/Pods-MeNote.debug.xcconfig"; sourceTree = "<group>"; };
+		EA19F26FB8A832E6A413BBD8 /* libPods-MeNoteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MeNoteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAE97556A87EC9DAC7F9EC37 /* Pods-MeNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeNoteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeNoteUITests/Pods-MeNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FD1F72258C2BEDF57806B8B5 /* Pods-MeNoteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeNoteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeNoteTests/Pods-MeNoteTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A757465F1EA8607C008FDC6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E394E689630C105F3EFCAE05 /* libPods-MeNote.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A75746781EA8607C008FDC6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CACAD3F4C528231F40620FA5 /* libPods-MeNoteTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A75746831EA8607C008FDC6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0144EB3D9DA5BE0BD06512B0 /* libPods-MeNoteUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7916F951B51AF0DE51E7992A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B489829A9BD35AB5450095AC /* Pods-MeNote.debug.xcconfig */,
+				99FB44049347194E04313673 /* Pods-MeNote.release.xcconfig */,
+				9804AF3799175021F3971B65 /* Pods-MeNoteTests.debug.xcconfig */,
+				FD1F72258C2BEDF57806B8B5 /* Pods-MeNoteTests.release.xcconfig */,
+				67DE411426EB5DD6A0D57C38 /* Pods-MeNoteUITests.debug.xcconfig */,
+				EAE97556A87EC9DAC7F9EC37 /* Pods-MeNoteUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8B80E491388243A466564938 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				783733AA40E8923876C0573D /* libPods-MeNote.a */,
+				EA19F26FB8A832E6A413BBD8 /* libPods-MeNoteTests.a */,
+				187C4207798A42DECD41C514 /* libPods-MeNoteUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A75746591EA8607C008FDC6A = {
+			isa = PBXGroup;
+			children = (
+				A75746641EA8607C008FDC6A /* MeNote */,
+				A757467E1EA8607C008FDC6A /* MeNoteTests */,
+				A75746891EA8607C008FDC6A /* MeNoteUITests */,
+				A75746631EA8607C008FDC6A /* Products */,
+				7916F951B51AF0DE51E7992A /* Pods */,
+				8B80E491388243A466564938 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A75746631EA8607C008FDC6A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A75746621EA8607C008FDC6A /* MeNote.app */,
+				A757467B1EA8607C008FDC6A /* MeNoteTests.xctest */,
+				A75746861EA8607C008FDC6A /* MeNoteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A75746641EA8607C008FDC6A /* MeNote */ = {
+			isa = PBXGroup;
+			children = (
+				A75746681EA8607C008FDC6A /* AppDelegate.h */,
+				A75746691EA8607C008FDC6A /* AppDelegate.m */,
+				A757466B1EA8607C008FDC6A /* ViewController.h */,
+				A757466C1EA8607C008FDC6A /* ViewController.m */,
+				A757466E1EA8607C008FDC6A /* Main.storyboard */,
+				A75746711EA8607C008FDC6A /* Assets.xcassets */,
+				A75746731EA8607C008FDC6A /* LaunchScreen.storyboard */,
+				A75746761EA8607C008FDC6A /* Info.plist */,
+				A75746651EA8607C008FDC6A /* Supporting Files */,
+			);
+			path = MeNote;
+			sourceTree = "<group>";
+		};
+		A75746651EA8607C008FDC6A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A75746661EA8607C008FDC6A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A757467E1EA8607C008FDC6A /* MeNoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				A757467F1EA8607C008FDC6A /* MeNoteTests.m */,
+				A75746811EA8607C008FDC6A /* Info.plist */,
+			);
+			path = MeNoteTests;
+			sourceTree = "<group>";
+		};
+		A75746891EA8607C008FDC6A /* MeNoteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A757468A1EA8607C008FDC6A /* MeNoteUITests.m */,
+				A757468C1EA8607C008FDC6A /* Info.plist */,
+			);
+			path = MeNoteUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A75746611EA8607C008FDC6A /* MeNote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A757468F1EA8607C008FDC6A /* Build configuration list for PBXNativeTarget "MeNote" */;
+			buildPhases = (
+				CC431422BD9BF7361618CD02 /* [CP] Check Pods Manifest.lock */,
+				A757465E1EA8607C008FDC6A /* Sources */,
+				A757465F1EA8607C008FDC6A /* Frameworks */,
+				A75746601EA8607C008FDC6A /* Resources */,
+				E2331465AB4447C320BC9D1E /* [CP] Embed Pods Frameworks */,
+				AF698FE9CE73476A7BDDD002 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MeNote;
+			productName = MeNote;
+			productReference = A75746621EA8607C008FDC6A /* MeNote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A757467A1EA8607C008FDC6A /* MeNoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A75746921EA8607C008FDC6A /* Build configuration list for PBXNativeTarget "MeNoteTests" */;
+			buildPhases = (
+				47AE0C4405FBCC225F572B31 /* [CP] Check Pods Manifest.lock */,
+				A75746771EA8607C008FDC6A /* Sources */,
+				A75746781EA8607C008FDC6A /* Frameworks */,
+				A75746791EA8607C008FDC6A /* Resources */,
+				5AA23D45237374157E80526D /* [CP] Embed Pods Frameworks */,
+				5F6AE8240057AF20561EE127 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A757467D1EA8607C008FDC6A /* PBXTargetDependency */,
+			);
+			name = MeNoteTests;
+			productName = MeNoteTests;
+			productReference = A757467B1EA8607C008FDC6A /* MeNoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A75746851EA8607C008FDC6A /* MeNoteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A75746951EA8607C008FDC6A /* Build configuration list for PBXNativeTarget "MeNoteUITests" */;
+			buildPhases = (
+				C1FD8351E09EC802E4DCD95D /* [CP] Check Pods Manifest.lock */,
+				A75746821EA8607C008FDC6A /* Sources */,
+				A75746831EA8607C008FDC6A /* Frameworks */,
+				A75746841EA8607C008FDC6A /* Resources */,
+				E7350AFF9CBAE69355E932DD /* [CP] Embed Pods Frameworks */,
+				9217BDAF6D19340A932CD380 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A75746881EA8607C008FDC6A /* PBXTargetDependency */,
+			);
+			name = MeNoteUITests;
+			productName = MeNoteUITests;
+			productReference = A75746861EA8607C008FDC6A /* MeNoteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A757465A1EA8607C008FDC6A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = roger;
+				TargetAttributes = {
+					A75746611EA8607C008FDC6A = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
+					};
+					A757467A1EA8607C008FDC6A = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A75746611EA8607C008FDC6A;
+					};
+					A75746851EA8607C008FDC6A = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A75746611EA8607C008FDC6A;
+					};
+				};
+			};
+			buildConfigurationList = A757465D1EA8607C008FDC6A /* Build configuration list for PBXProject "MeNote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A75746591EA8607C008FDC6A;
+			productRefGroup = A75746631EA8607C008FDC6A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A75746611EA8607C008FDC6A /* MeNote */,
+				A757467A1EA8607C008FDC6A /* MeNoteTests */,
+				A75746851EA8607C008FDC6A /* MeNoteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A75746601EA8607C008FDC6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A75746751EA8607C008FDC6A /* LaunchScreen.storyboard in Resources */,
+				A75746721EA8607C008FDC6A /* Assets.xcassets in Resources */,
+				A75746701EA8607C008FDC6A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A75746791EA8607C008FDC6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A75746841EA8607C008FDC6A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47AE0C4405FBCC225F572B31 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5AA23D45237374157E80526D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeNoteTests/Pods-MeNoteTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F6AE8240057AF20561EE127 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeNoteTests/Pods-MeNoteTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9217BDAF6D19340A932CD380 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeNoteUITests/Pods-MeNoteUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF698FE9CE73476A7BDDD002 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeNote/Pods-MeNote-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1FD8351E09EC802E4DCD95D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CC431422BD9BF7361618CD02 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E2331465AB4447C320BC9D1E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeNote/Pods-MeNote-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7350AFF9CBAE69355E932DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeNoteUITests/Pods-MeNoteUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A757465E1EA8607C008FDC6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A757466D1EA8607C008FDC6A /* ViewController.m in Sources */,
+				A757466A1EA8607C008FDC6A /* AppDelegate.m in Sources */,
+				A75746671EA8607C008FDC6A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A75746771EA8607C008FDC6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A75746801EA8607C008FDC6A /* MeNoteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A75746821EA8607C008FDC6A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A757468B1EA8607C008FDC6A /* MeNoteUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A757467D1EA8607C008FDC6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A75746611EA8607C008FDC6A /* MeNote */;
+			targetProxy = A757467C1EA8607C008FDC6A /* PBXContainerItemProxy */;
+		};
+		A75746881EA8607C008FDC6A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A75746611EA8607C008FDC6A /* MeNote */;
+			targetProxy = A75746871EA8607C008FDC6A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A757466E1EA8607C008FDC6A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A757466F1EA8607C008FDC6A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A75746731EA8607C008FDC6A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A75746741EA8607C008FDC6A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A757468D1EA8607C008FDC6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A757468E1EA8607C008FDC6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A75746901EA8607C008FDC6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B489829A9BD35AB5450095AC /* Pods-MeNote.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MeNote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lysoft.MeNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A75746911EA8607C008FDC6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99FB44049347194E04313673 /* Pods-MeNote.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MeNote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lysoft.MeNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A75746931EA8607C008FDC6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9804AF3799175021F3971B65 /* Pods-MeNoteTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MeNoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lysoft.MeNoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeNote.app/MeNote";
+			};
+			name = Debug;
+		};
+		A75746941EA8607C008FDC6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD1F72258C2BEDF57806B8B5 /* Pods-MeNoteTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MeNoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lysoft.MeNoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeNote.app/MeNote";
+			};
+			name = Release;
+		};
+		A75746961EA8607C008FDC6A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67DE411426EB5DD6A0D57C38 /* Pods-MeNoteUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = MeNoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lysoft.MeNoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MeNote;
+			};
+			name = Debug;
+		};
+		A75746971EA8607C008FDC6A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAE97556A87EC9DAC7F9EC37 /* Pods-MeNoteUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = MeNoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lysoft.MeNoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MeNote;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A757465D1EA8607C008FDC6A /* Build configuration list for PBXProject "MeNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A757468D1EA8607C008FDC6A /* Debug */,
+				A757468E1EA8607C008FDC6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A757468F1EA8607C008FDC6A /* Build configuration list for PBXNativeTarget "MeNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A75746901EA8607C008FDC6A /* Debug */,
+				A75746911EA8607C008FDC6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A75746921EA8607C008FDC6A /* Build configuration list for PBXNativeTarget "MeNoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A75746931EA8607C008FDC6A /* Debug */,
+				A75746941EA8607C008FDC6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A75746951EA8607C008FDC6A /* Build configuration list for PBXNativeTarget "MeNoteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A75746961EA8607C008FDC6A /* Debug */,
+				A75746971EA8607C008FDC6A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A757465A1EA8607C008FDC6A /* Project object */;
+}
