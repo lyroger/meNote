@@ -7,6 +7,7 @@
 //
 
 #import "MNRootViewController.h"
+#import "MNFloatToolView.h"
 
 @interface MNRootViewController ()
 
@@ -37,6 +38,9 @@
         make.left.right.equalTo(@0);
         make.height.equalTo(@50);
     }];
+    
+    MNFloatToolView *floadView = [MNFloatToolView new];
+    [floadView addToView:self.view];
 }
 
 - (void)didReceiveMemoryWarning {

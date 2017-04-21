@@ -10,4 +10,6 @@
 
 @interface MNFloatToolView : UIView
 
+- (void)addToView:(UIView*)view;
+
 @end
