@@ -34,6 +34,7 @@
     if (self == [super init]) {
         isUnFold = NO;
         coverView = [UIView new];
+        coverView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.2];
         [self addSubview:coverView];
 
         userButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -89,8 +90,11 @@
         editRect = CGRectMake((kMainButtonWidth + kToolMarginWidth), editButton.origin.y, editButton.size.width, editButton.size.height);
     }
     
+    coverView.hidden = isUnFold;
     //功能按钮向右展开
-    if (isUnFold) {
+    if (!isUnFold) {
+        [self removeGestureRecognizer:self.pan];
+        
         [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:10
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
@@ -102,6 +106,7 @@
                              isUnFold = !isUnFold;
                          }];
     } else {
+        [self addGestureRecognizer:self.pan];
         [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
             //收起的时候
             userButton.center = mainButton.center;
