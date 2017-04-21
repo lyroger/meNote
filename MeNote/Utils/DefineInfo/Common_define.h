@@ -42,7 +42,6 @@
 #import "ReactiveCocoa.h"
 #import "MNNetConfigure.h"
 
-
 #ifndef Common_define_h
 #define Common_define_h
 

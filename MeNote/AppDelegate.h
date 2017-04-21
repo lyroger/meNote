@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MNRootViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) MNRootViewController *rootViewController;
 
 @end
 

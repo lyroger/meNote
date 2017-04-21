@@ -7,8 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "MNNavigationController.h"
+#import "MNLoginViewController.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) MNLoginViewController *loginVC;
 
 @end
 
@@ -17,9 +21,57 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self authorizeOperation];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
+- (void)authorizeOperation
+{
+    //加载本地用户信息
+    [[MNUserInfo shareUserInfo] getUserInfoFromLocal];
+    
+    //不需要加载启动页则判断是否需要登录
+    if (![MNUserInfo shareUserInfo].token.length) {
+        self.loginVC = [[MNLoginViewController alloc] init];
+        @weakify(self)
+        MNNavigationController *rootNav = [[MNNavigationController alloc] initWithRootViewController:self.loginVC];
+        self.loginVC.loginCompleteBlock = ^(BOOL success){
+            @strongify(self)
+            if (success) {
+               [self enterRootView];
+            }
+        };
+        self.window.rootViewController = rootNav;
+        
+    } else {
+        [self enterRootView];
+    }
+}
+
+- (void)enterRootView
+{
+    self.rootViewController = [[MNRootViewController alloc] init];
+    MNNavigationController *rootNav = [[MNNavigationController alloc] initWithRootViewController:self.rootViewController];
+    self.window.rootViewController = rootNav;
+    
+    //如果登录页面存在，则做一个登录页面退场效果。
+    if (self.loginVC) {
+        [self.rootViewController.view addSubview:self.loginVC.view];
+        self.loginVC.view.alpha = 1;
+        self.loginVC.view.transform = CGAffineTransformMakeScale(1, 1);
+        [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            self.loginVC.view.alpha = 0;
+            self.loginVC.view.transform = CGAffineTransformMakeScale(2.5, 2.5);
+        } completion:^(BOOL finished) {
+            [self.loginVC.view removeFromSuperview];
+            self.loginVC = nil;
+            NSLog(@"登录页面释放-动画结束");
+        }];
+    }
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -13,7 +13,6 @@
     UITapGestureRecognizer  *_tap; // 添加手势用于点击空白处收回键盘
     MBProgressHUD *HUD;
     CSErrorTips *tipsView;
-    NSString *_UMSTitle;
 }
 
 @end

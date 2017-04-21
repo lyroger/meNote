@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MNBaseViewController.h"
 
-@interface MNRootViewController : UIViewController
+@interface MNRootViewController : MNBaseViewController
 
 @end
 

@@ -62,7 +62,4 @@
 
 - (BOOL)isTipsViewHidden;
 
-//统计页标题
-- (NSString*)UMSTitle;
-
 @end

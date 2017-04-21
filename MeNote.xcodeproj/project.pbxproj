@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0144EB3D9DA5BE0BD06512B0 /* libPods-MeNoteUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 187C4207798A42DECD41C514 /* libPods-MeNoteUITests.a */; };
+		A72E2AAB1EA99AE2009A7066 /* MNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72E2AAA1EA99AE2009A7066 /* MNNavigationController.m */; };
+		A72E2AAE1EA99D38009A7066 /* MNLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72E2AAD1EA99D38009A7066 /* MNLoginViewController.m */; };
+		A72E2AB11EA99DEE009A7066 /* MNNewNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72E2AB01EA99DEE009A7066 /* MNNewNoteViewController.m */; };
+		A72E2AB41EA99E0C009A7066 /* MNNoteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72E2AB31EA99E0C009A7066 /* MNNoteDetailViewController.m */; };
+		A72E2AB71EA9A85B009A7066 /* MNRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72E2AB61EA9A85B009A7066 /* MNRegisterViewController.m */; };
+		A72E2ABA1EA9A87E009A7066 /* MNForgetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72E2AB91EA9A87E009A7066 /* MNForgetPwdViewController.m */; };
+		A72E2ABD1EA9B626009A7066 /* MNFloatToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = A72E2ABC1EA9B626009A7066 /* MNFloatToolView.m */; };
 		A75746671EA8607C008FDC6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A75746661EA8607C008FDC6A /* main.m */; };
 		A757466A1EA8607C008FDC6A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A75746691EA8607C008FDC6A /* AppDelegate.m */; };
 		A75746721EA8607C008FDC6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A75746711EA8607C008FDC6A /* Assets.xcassets */; };
@@ -166,6 +173,20 @@
 		783733AA40E8923876C0573D /* libPods-MeNote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MeNote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9804AF3799175021F3971B65 /* Pods-MeNoteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeNoteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeNoteTests/Pods-MeNoteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		99FB44049347194E04313673 /* Pods-MeNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeNote.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeNote/Pods-MeNote.release.xcconfig"; sourceTree = "<group>"; };
+		A72E2AA91EA99AE2009A7066 /* MNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNNavigationController.h; sourceTree = "<group>"; };
+		A72E2AAA1EA99AE2009A7066 /* MNNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNNavigationController.m; sourceTree = "<group>"; };
+		A72E2AAC1EA99D38009A7066 /* MNLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNLoginViewController.h; sourceTree = "<group>"; };
+		A72E2AAD1EA99D38009A7066 /* MNLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNLoginViewController.m; sourceTree = "<group>"; };
+		A72E2AAF1EA99DEE009A7066 /* MNNewNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNNewNoteViewController.h; sourceTree = "<group>"; };
+		A72E2AB01EA99DEE009A7066 /* MNNewNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNNewNoteViewController.m; sourceTree = "<group>"; };
+		A72E2AB21EA99E0C009A7066 /* MNNoteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNNoteDetailViewController.h; sourceTree = "<group>"; };
+		A72E2AB31EA99E0C009A7066 /* MNNoteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNNoteDetailViewController.m; sourceTree = "<group>"; };
+		A72E2AB51EA9A85B009A7066 /* MNRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNRegisterViewController.h; sourceTree = "<group>"; };
+		A72E2AB61EA9A85B009A7066 /* MNRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNRegisterViewController.m; sourceTree = "<group>"; };
+		A72E2AB81EA9A87E009A7066 /* MNForgetPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNForgetPwdViewController.h; sourceTree = "<group>"; };
+		A72E2AB91EA9A87E009A7066 /* MNForgetPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNForgetPwdViewController.m; sourceTree = "<group>"; };
+		A72E2ABB1EA9B626009A7066 /* MNFloatToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNFloatToolView.h; sourceTree = "<group>"; };
+		A72E2ABC1EA9B626009A7066 /* MNFloatToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNFloatToolView.m; sourceTree = "<group>"; };
 		A75746621EA8607C008FDC6A /* MeNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75746661EA8607C008FDC6A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A75746681EA8607C008FDC6A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -593,6 +614,8 @@
 		A757469F1EA890C5008FDC6A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A72E2ABB1EA9B626009A7066 /* MNFloatToolView.h */,
+				A72E2ABC1EA9B626009A7066 /* MNFloatToolView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -602,6 +625,10 @@
 			children = (
 				A75746A51EA89138008FDC6A /* MNRootViewController.h */,
 				A75746A61EA89138008FDC6A /* MNRootViewController.m */,
+				A72E2AAF1EA99DEE009A7066 /* MNNewNoteViewController.h */,
+				A72E2AB01EA99DEE009A7066 /* MNNewNoteViewController.m */,
+				A72E2AB21EA99E0C009A7066 /* MNNoteDetailViewController.h */,
+				A72E2AB31EA99E0C009A7066 /* MNNoteDetailViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -635,6 +662,12 @@
 		A75746A41EA890C5008FDC6A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A72E2AAC1EA99D38009A7066 /* MNLoginViewController.h */,
+				A72E2AAD1EA99D38009A7066 /* MNLoginViewController.m */,
+				A72E2AB51EA9A85B009A7066 /* MNRegisterViewController.h */,
+				A72E2AB61EA9A85B009A7066 /* MNRegisterViewController.m */,
+				A72E2AB81EA9A87E009A7066 /* MNForgetPwdViewController.h */,
+				A72E2AB91EA9A87E009A7066 /* MNForgetPwdViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -652,6 +685,8 @@
 		A75746A91EA891A7008FDC6A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A72E2AA91EA99AE2009A7066 /* MNNavigationController.h */,
+				A72E2AAA1EA99AE2009A7066 /* MNNavigationController.m */,
 				A75746AA1EA891A7008FDC6A /* MNBaseViewController.h */,
 				A75746AB1EA891A7008FDC6A /* MNBaseViewController.m */,
 			);
@@ -1538,6 +1573,7 @@
 			files = (
 				A75747E41EA8968F008FDC6A /* NSString+RemoveEmoji.m in Sources */,
 				A75747D61EA8968F008FDC6A /* NSObject+KVOBlocks.m in Sources */,
+				A72E2AB41EA99E0C009A7066 /* MNNoteDetailViewController.m in Sources */,
 				A75747EA1EA8968F008FDC6A /* NSTimer+Addition.m in Sources */,
 				A75747D31EA8968F008FDC6A /* NSObject+Blocks.m in Sources */,
 				A757482F1EA89EE6008FDC6A /* MyRefreshHUD.m in Sources */,
@@ -1551,6 +1587,7 @@
 				A757466A1EA8607C008FDC6A /* AppDelegate.m in Sources */,
 				A75747CA1EA8968F008FDC6A /* NSDictionary+SafeAccess.m in Sources */,
 				A75747C11EA8968F008FDC6A /* NSDate+Extension.m in Sources */,
+				A72E2ABA1EA9A87E009A7066 /* MNForgetPwdViewController.m in Sources */,
 				A757481B1EA8968F008FDC6A /* UIView+BlockGesture.m in Sources */,
 				A75747FD1EA8968F008FDC6A /* UIColor+Gradient.m in Sources */,
 				A75748261EA8968F008FDC6A /* UIWindow+Hierarchy.m in Sources */,
@@ -1563,6 +1600,7 @@
 				A75747E71EA8968F008FDC6A /* NSString+Trims.m in Sources */,
 				A75748541EA8A2FE008FDC6A /* GPSServerManager.m in Sources */,
 				A75748521EA8A2FE008FDC6A /* BaseModel.m in Sources */,
+				A72E2AB71EA9A85B009A7066 /* MNRegisterViewController.m in Sources */,
 				A757480D1EA8968F008FDC6A /* UINavigationBar+Awesome.m in Sources */,
 				A75748111EA8968F008FDC6A /* UINavigationItem+Margin.m in Sources */,
 				A75748591EA8A2FE008FDC6A /* StatusModel.m in Sources */,
@@ -1612,10 +1650,12 @@
 				A75747F81EA8968F008FDC6A /* UIButton+Indicator.m in Sources */,
 				A75747EE1EA8968F008FDC6A /* NSUserDefaults+iCloudSync.m in Sources */,
 				A75748331EA89F4D008FDC6A /* HUDManager.m in Sources */,
+				A72E2AAB1EA99AE2009A7066 /* MNNavigationController.m in Sources */,
 				A75747ED1EA8968F008FDC6A /* NSURL+UrlEncode.m in Sources */,
 				A75747C91EA8968F008FDC6A /* NSDictionary+Merge.m in Sources */,
 				A75747D21EA8968F008FDC6A /* NSObject+AssociatedObject.m in Sources */,
 				A75747DE1EA8968F008FDC6A /* NSString+ImageSizeUrl.m in Sources */,
+				A72E2AAE1EA99D38009A7066 /* MNLoginViewController.m in Sources */,
 				A757485F1EA8A712008FDC6A /* MNMUserInfo.m in Sources */,
 				A75747F21EA8968F008FDC6A /* UIButton+BackgroundColor.m in Sources */,
 				A757481A1EA8968F008FDC6A /* UIView+Animation.m in Sources */,
@@ -1631,6 +1671,7 @@
 				A75747C31EA8968F008FDC6A /* NSDate+Reporting.m in Sources */,
 				A75747EB1EA8968F008FDC6A /* NSTimer+Blocks.m in Sources */,
 				A75747DA1EA8968F008FDC6A /* NSString+Contains.m in Sources */,
+				A72E2ABD1EA9B626009A7066 /* MNFloatToolView.m in Sources */,
 				A75747D51EA8968F008FDC6A /* NSObject+GCD.m in Sources */,
 				A75748551EA8A2FE008FDC6A /* HttpClient.m in Sources */,
 				A757483B1EA8A28C008FDC6A /* DataManager.m in Sources */,
@@ -1638,6 +1679,7 @@
 				A75747FC1EA8968F008FDC6A /* UIButton+TouchAreaInsets.m in Sources */,
 				A75747F01EA8968F008FDC6A /* NSMutableAttributedString+ColorAndFontSize.m in Sources */,
 				A75747D81EA8968F008FDC6A /* NSSet+Block.m in Sources */,
+				A72E2AB11EA99DEE009A7066 /* MNNewNoteViewController.m in Sources */,
 				A75747DB1EA8968F008FDC6A /* NSString+DictionaryValue.m in Sources */,
 				A75747CC1EA8968F008FDC6A /* NSFileManager+Paths.m in Sources */,
 				A75748231EA8968F008FDC6A /* UIView+ViewController.m in Sources */,
@@ -1794,6 +1836,7 @@
 			baseConfigurationReference = B489829A9BD35AB5450095AC /* Pods-MeNote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = AYB7599EHE;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MeNote/MNPrefixHeader.pch";
 				INFOPLIST_FILE = MeNote/Info.plist;
@@ -1810,6 +1853,7 @@
 			baseConfigurationReference = 99FB44049347194E04313673 /* Pods-MeNote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = AYB7599EHE;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MeNote/MNPrefixHeader.pch";
 				INFOPLIST_FILE = MeNote/Info.plist;
