@@ -146,6 +146,9 @@
 		A75748591EA8A2FE008FDC6A /* StatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A75748511EA8A2FE008FDC6A /* StatusModel.m */; };
 		A757485F1EA8A712008FDC6A /* MNMUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A757485E1EA8A712008FDC6A /* MNMUserInfo.m */; };
 		A75748651EA8ABE8008FDC6A /* MyActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = A75748641EA8ABE8008FDC6A /* MyActivityIndicatorView.m */; };
+		A7E709501EAD9FE000A224B9 /* MNNoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E7094F1EAD9FE000A224B9 /* MNNoteTableViewCell.m */; };
+		A7E709531EADA31200A224B9 /* MNNoteSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E709521EADA31200A224B9 /* MNNoteSectionHeaderView.m */; };
+		A7E709561EADA90900A224B9 /* MNNoteListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E709551EADA90900A224B9 /* MNNoteListModel.m */; };
 		CACAD3F4C528231F40620FA5 /* libPods-MeNoteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA19F26FB8A832E6A413BBD8 /* libPods-MeNoteTests.a */; };
 		E394E689630C105F3EFCAE05 /* libPods-MeNote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 783733AA40E8923876C0573D /* libPods-MeNote.a */; };
 /* End PBXBuildFile section */
@@ -464,6 +467,12 @@
 		A75748621EA8A85B008FDC6A /* Common_GlobalKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common_GlobalKey.h; sourceTree = "<group>"; };
 		A75748631EA8ABE8008FDC6A /* MyActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyActivityIndicatorView.h; sourceTree = "<group>"; };
 		A75748641EA8ABE8008FDC6A /* MyActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyActivityIndicatorView.m; sourceTree = "<group>"; };
+		A7E7094E1EAD9FE000A224B9 /* MNNoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNNoteTableViewCell.h; sourceTree = "<group>"; };
+		A7E7094F1EAD9FE000A224B9 /* MNNoteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNNoteTableViewCell.m; sourceTree = "<group>"; };
+		A7E709511EADA31200A224B9 /* MNNoteSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNNoteSectionHeaderView.h; sourceTree = "<group>"; };
+		A7E709521EADA31200A224B9 /* MNNoteSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNNoteSectionHeaderView.m; sourceTree = "<group>"; };
+		A7E709541EADA90900A224B9 /* MNNoteListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNNoteListModel.h; path = MeNote/Classes/Note/View/MNNoteListModel.h; sourceTree = SOURCE_ROOT; };
+		A7E709551EADA90900A224B9 /* MNNoteListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNNoteListModel.m; path = MeNote/Classes/Note/View/MNNoteListModel.m; sourceTree = SOURCE_ROOT; };
 		B489829A9BD35AB5450095AC /* Pods-MeNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeNote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeNote/Pods-MeNote.debug.xcconfig"; sourceTree = "<group>"; };
 		EA19F26FB8A832E6A413BBD8 /* libPods-MeNoteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MeNoteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE97556A87EC9DAC7F9EC37 /* Pods-MeNoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeNoteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeNoteUITests/Pods-MeNoteUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -607,6 +616,8 @@
 		A757469E1EA890C5008FDC6A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A7E709541EADA90900A224B9 /* MNNoteListModel.h */,
+				A7E709551EADA90900A224B9 /* MNNoteListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -616,6 +627,10 @@
 			children = (
 				A72E2ABB1EA9B626009A7066 /* MNFloatToolView.h */,
 				A72E2ABC1EA9B626009A7066 /* MNFloatToolView.m */,
+				A7E7094E1EAD9FE000A224B9 /* MNNoteTableViewCell.h */,
+				A7E7094F1EAD9FE000A224B9 /* MNNoteTableViewCell.m */,
+				A7E709511EADA31200A224B9 /* MNNoteSectionHeaderView.h */,
+				A7E709521EADA31200A224B9 /* MNNoteSectionHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1593,6 +1608,7 @@
 				A75748261EA8968F008FDC6A /* UIWindow+Hierarchy.m in Sources */,
 				A75747EC1EA8968F008FDC6A /* NSURL+Param.m in Sources */,
 				A75748181EA8968F008FDC6A /* UITextView+PlaceHolder.m in Sources */,
+				A7E709561EADA90900A224B9 /* MNNoteListModel.m in Sources */,
 				A757483F1EA8A2B3008FDC6A /* MicAssistant.m in Sources */,
 				A757481D1EA8968F008FDC6A /* UIView+Find.m in Sources */,
 				A75747DD1EA8968F008FDC6A /* NSString+Hash.m in Sources */,
@@ -1605,6 +1621,7 @@
 				A75748111EA8968F008FDC6A /* UINavigationItem+Margin.m in Sources */,
 				A75748591EA8A2FE008FDC6A /* StatusModel.m in Sources */,
 				A75747E21EA8968F008FDC6A /* NSString+Regex.m in Sources */,
+				A7E709531EADA31200A224B9 /* MNNoteSectionHeaderView.m in Sources */,
 				A75747E51EA8968F008FDC6A /* NSString+Score.m in Sources */,
 				A75748241EA8968F008FDC6A /* UIView+Visuals.m in Sources */,
 				A75748031EA8968F008FDC6A /* UIImage+Alpha.m in Sources */,
@@ -1655,6 +1672,7 @@
 				A75747C91EA8968F008FDC6A /* NSDictionary+Merge.m in Sources */,
 				A75747D21EA8968F008FDC6A /* NSObject+AssociatedObject.m in Sources */,
 				A75747DE1EA8968F008FDC6A /* NSString+ImageSizeUrl.m in Sources */,
+				A7E709501EAD9FE000A224B9 /* MNNoteTableViewCell.m in Sources */,
 				A72E2AAE1EA99D38009A7066 /* MNLoginViewController.m in Sources */,
 				A757485F1EA8A712008FDC6A /* MNMUserInfo.m in Sources */,
 				A75747F21EA8968F008FDC6A /* UIButton+BackgroundColor.m in Sources */,
