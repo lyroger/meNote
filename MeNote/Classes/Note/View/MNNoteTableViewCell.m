@@ -79,7 +79,14 @@
 
 - (void)noteModel:(MNNoteListModel*)model
 {
-    descLabel.text = model.noteDes;
+    NSMutableAttributedString * attributedString1 = [[NSMutableAttributedString alloc] initWithString:model.noteDes];
+    NSMutableParagraphStyle * paragraphStyle1 = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle1 setLineSpacing:5];
+    [attributedString1 addAttribute:NSParagraphStyleAttributeName value:paragraphStyle1 range:NSMakeRange(0, [model.noteDes length])];
+    [descLabel setAttributedText:attributedString1];
+    [descLabel sizeToFit];
+    
+//    descLabel.text = model.noteDes;
     
     noteImage.image = [UIImage imageNamed:[model.noteImages objectAtIndex:0]];
 }

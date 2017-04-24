@@ -11,8 +11,11 @@
 #import "MNNoteTableViewCell.h"
 #import "MNNoteSectionHeaderView.h"
 #import "MNNoteListModel.h"
+#import "MNNewNoteViewController.h"
+#import "MNNoteDetailViewController.h"
+#import "MNUserCenterViewController.h"
 
-@interface MNRootViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface MNRootViewController ()<UITableViewDelegate,UITableViewDataSource,MNFloatToolViewDelegete>
 {
     
 }
@@ -40,7 +43,7 @@
 - (void)loadSubView
 {
     self.myNotesTabelView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStyleGrouped];
-    self.myNotesTabelView.backgroundColor = UIColorHex(0xf5f6f8);;
+    self.myNotesTabelView.backgroundColor = UIColorHex(0xf5f6f8);
     self.myNotesTabelView.dataSource = self;
     self.myNotesTabelView.delegate = self;
     self.myNotesTabelView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -50,6 +53,7 @@
     
     
     MNFloatToolView *floadView = [MNFloatToolView new];
+    floadView.delegate = self;
     [floadView addToView:self.view];
 }
 
@@ -91,7 +95,28 @@
     [self.dataSource addObject:section3];
 }
 
+#pragma mark MNFloatToolViewDelegete
+- (void)didClickToolViewItem:(NSInteger)itemIndex
+{
+    if (itemIndex == 0) {
+        // 写心情
+        MNNewNoteViewController *newNoteVC = [[MNNewNoteViewController alloc] init];
+        [self.navigationController pushViewController:newNoteVC animated:YES];
+    } else if (itemIndex == 1) {
+        // 我的
+        MNUserCenterViewController *userCenterVC = [[MNUserCenterViewController alloc] init];
+        [self.navigationController pushViewController:userCenterVC animated:YES];
+    }
+}
+
 #pragma mark UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //详情
+    MNNoteDetailViewController *detailVC = [[MNNoteDetailViewController alloc] init];
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     MNNoteSectionHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([MNNoteSectionHeaderView class])];

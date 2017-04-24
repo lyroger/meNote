@@ -34,8 +34,9 @@
     if (self == [super init]) {
         isUnFold = NO;
         coverView = [UIView new];
-        coverView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.2];
-        [self addSubview:coverView];
+        coverView.backgroundColor = [UIColor colorWithWhite:0.80 alpha:0.5];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickAction:)];
+        [coverView addGestureRecognizer:tap];
 
         userButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [userButton setTitle:@"U" forState:UIControlStateNormal];
@@ -45,6 +46,8 @@
         userButton.layer.borderColor = [UIColor clearColor].CGColor;
         userButton.layer.borderWidth = 1;
         userButton.backgroundColor = UIColorHex(0x00c3c4);
+        userButton.tag = 101;
+        [userButton addTarget:self action:@selector(clickFunction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:userButton];
         
         editButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -56,6 +59,8 @@
         editButton.layer.borderColor = [UIColor clearColor].CGColor;
         editButton.layer.borderWidth = 1;
         editButton.backgroundColor = UIColorHex(0x00c3c4);
+        editButton.tag = 100;
+        [editButton addTarget:self action:@selector(clickFunction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:editButton];
         
         mainButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -72,12 +77,43 @@
         [mainButton addTarget:self action:@selector(clickMainAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:mainButton];
         
-        self.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
-        self.clipsToBounds = NO;
+//        self.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
+//        self.clipsToBounds = NO;
     }
     return  self;
 }
 
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    
+    UIView *result = [super hitTest:point withEvent:event];
+    CGPoint userPoint = [userButton convertPoint:point fromView:self];
+    if ([userButton pointInside:userPoint withEvent:event] && isUnFold) {
+        return userButton;
+    }
+    CGPoint editPoint = [editButton convertPoint:point fromView:self];
+    if ([editButton pointInside:editPoint withEvent:event] && isUnFold) {
+        return editButton;
+    }
+    return result;
+}
+
+//展出时，点击的功能按钮事件
+- (void)clickFunction:(UIButton*)button
+{
+    if (isUnFold && self.delegate && [self.delegate respondsToSelector:@selector(didClickToolViewItem:)]) {
+        [self.delegate didClickToolViewItem:button.tag-100];
+        //收起展开的按钮；
+        [self clickMainAction:nil];
+    }
+}
+
+//点击蒙层时触发事件
+- (void)clickAction:(UITapGestureRecognizer*)gesture
+{
+    [self clickMainAction:nil];
+}
+
+//点击主按钮
 - (void)clickMainAction:(UIButton*)button
 {
     CGRect userRect;
@@ -93,15 +129,15 @@
         editRect = CGRectMake((kMainButtonWidth + kToolMarginWidth), editButton.origin.y, editButton.size.width, editButton.size.height);
     }
     
-    coverView.hidden = isUnFold;
     //功能按钮向右展开
     if (!isUnFold) {
         [self removeGestureRecognizer:self.pan];
-        
+        coverView.hidden = NO;
         [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:10
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
                              //展开的时候
+                             coverView.alpha = 1;
                              mainButton.transform = CGAffineTransformMakeRotation(M_PI);
                              userButton.transform = CGAffineTransformMakeRotation(2*M_PI);
                              editButton.transform = CGAffineTransformMakeRotation(2*M_PI);
@@ -115,12 +151,14 @@
         [self addGestureRecognizer:self.pan];
         [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
             //收起的时候
+            coverView.alpha = 0;
             mainButton.transform = CGAffineTransformIdentity;
             userButton.transform = CGAffineTransformIdentity;
             editButton.transform = CGAffineTransformIdentity;
             userButton.center = mainButton.center;
             editButton.center = mainButton.center;
         } completion:^(BOOL finished) {
+            coverView.hidden = YES;
             isUnFold = !isUnFold;
         }];
     }
@@ -133,6 +171,10 @@
     self.frame = CGRectMake(self.superView.size.width-kMainButtonWidth+5, self.superView.size.height-50-kMainButtonWidth, kMainButtonWidth, kMainButtonWidth);
     
     coverView.frame = view.bounds;
+    [self.superView addSubview:coverView];
+    [self.superView bringSubviewToFront:self];
+    coverView.hidden = YES;
+    
     mainButton.center = CGPointMake(kMainButtonWidth/2, kMainButtonWidth/2);
     userButton.center = mainButton.center;
     editButton.center = mainButton.center;
