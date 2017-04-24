@@ -38,6 +38,7 @@
         [self addSubview:coverView];
 
         userButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [userButton setTitle:@"U" forState:UIControlStateNormal];
         userButton.frame = CGRectMake(0, 0, kToolButtonWidth, kToolButtonWidth);
         userButton.layer.cornerRadius = kToolButtonWidth/2;
         userButton.layer.masksToBounds = YES;
@@ -47,6 +48,7 @@
         [self addSubview:userButton];
         
         editButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [editButton setTitle:@"E" forState:UIControlStateNormal];
         editButton.frame = CGRectMake(0, 0, kToolButtonWidth, kToolButtonWidth);
         editButton.frame = CGRectMake(0, 0, kToolButtonWidth, kToolButtonWidth);
         editButton.layer.cornerRadius = kToolButtonWidth/2;
@@ -57,6 +59,7 @@
         [self addSubview:editButton];
         
         mainButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [mainButton setTitle:@"M" forState:UIControlStateNormal];
         mainButton.frame = CGRectMake(0, 0, kMainButtonWidth, kMainButtonWidth);
         mainButton.layer.cornerRadius = kMainButtonWidth/2;
         mainButton.layer.borderColor = [UIColor clearColor].CGColor;
@@ -99,6 +102,9 @@
                             options:UIViewAnimationOptionCurveEaseOut
                          animations:^{
                              //展开的时候
+                             mainButton.transform = CGAffineTransformMakeRotation(M_PI);
+                             userButton.transform = CGAffineTransformMakeRotation(2*M_PI);
+                             editButton.transform = CGAffineTransformMakeRotation(2*M_PI);
                              userButton.frame = userRect;
                              editButton.frame = editRect;
                              
@@ -109,6 +115,9 @@
         [self addGestureRecognizer:self.pan];
         [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
             //收起的时候
+            mainButton.transform = CGAffineTransformIdentity;
+            userButton.transform = CGAffineTransformIdentity;
+            editButton.transform = CGAffineTransformIdentity;
             userButton.center = mainButton.center;
             editButton.center = mainButton.center;
         } completion:^(BOOL finished) {
