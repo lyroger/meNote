@@ -17,6 +17,9 @@
 
 #define kFontNumSize(s) [UIFont fontWithName:@"Avenir-Light" size:s]
 
+#define kFontPingFangRegularSize(s)  [UIFont fontWithName:@".PingFangSC-Regular" size:s]
+
+#define kFontPingFangMediumSize(s)  [UIFont fontWithName:@".PingFangSC-Medium" size:s]
 /** 常用的几个字体 **/
 //导航栏中title字体
 #define kNavTitleFont       kFontSize(18)

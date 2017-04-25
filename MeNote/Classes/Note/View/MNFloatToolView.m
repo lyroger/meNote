@@ -76,9 +76,6 @@
         mainButton.backgroundColor = UIColorHex(0x00c3c4);
         [mainButton addTarget:self action:@selector(clickMainAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:mainButton];
-        
-//        self.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
-//        self.clipsToBounds = NO;
     }
     return  self;
 }
@@ -189,19 +186,15 @@
 {
     CGPoint point = [recognizer locationInView:self.superView];
     if ([(UIPanGestureRecognizer *)recognizer state] == UIGestureRecognizerStateBegan) {
-        NSLog(@"began- %@",NSStringFromCGPoint(point));
         self.center = point;
     } else if ([(UIPanGestureRecognizer *)recognizer state] == UIGestureRecognizerStateChanged) {
-        NSLog(@"changed- %@",NSStringFromCGPoint(point));
         self.center = point;
     } else {
-        NSLog(@"other- %@",NSStringFromCGPoint(point));
         [UIView animateWithDuration:0.3 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:8 options:UIViewAnimationOptionCurveEaseIn animations:^{
-            
             CGFloat y = point.y;
-            if (y<kMainButtonWidth/2) {
-                y = kMainButtonWidth/2 + 5;
-            } else if (y > self.superView.size.height-kMainButtonWidth/2) {
+            if (y < kMainButtonWidth/2) {
+                y = kMainButtonWidth/2 + 15;
+            } else if (y > self.superView.size.height - kMainButtonWidth/2) {
                 y = self.superView.size.height - kMainButtonWidth/2 - 5;
             }
             
