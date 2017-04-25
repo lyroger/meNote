@@ -8,8 +8,8 @@
 
 #import "MNFloatToolView.h"
 
-#define kMainButtonWidth 50
-#define kToolButtonWidth 40
+#define kMainButtonWidth 55
+#define kToolButtonWidth 46
 #define kToolMarginWidth 10
 
 @interface MNFloatToolView()
@@ -39,43 +39,35 @@
         [coverView addGestureRecognizer:tap];
 
         userButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [userButton setTitle:@"U" forState:UIControlStateNormal];
+        [userButton setBackgroundImage:[UIImage imageNamed:@"note_icon_user"] forState:UIControlStateNormal];
         userButton.frame = CGRectMake(0, 0, kToolButtonWidth, kToolButtonWidth);
-        userButton.layer.cornerRadius = kToolButtonWidth/2;
-        userButton.layer.masksToBounds = YES;
-        userButton.layer.borderColor = [UIColor clearColor].CGColor;
-        userButton.layer.borderWidth = 1;
-        userButton.backgroundColor = UIColorHex(0x00c3c4);
         userButton.tag = 101;
         [userButton addTarget:self action:@selector(clickFunction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:userButton];
         
         editButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [editButton setTitle:@"E" forState:UIControlStateNormal];
+        [editButton setBackgroundImage:[UIImage imageNamed:@"note_icon_new"] forState:UIControlStateNormal];
         editButton.frame = CGRectMake(0, 0, kToolButtonWidth, kToolButtonWidth);
         editButton.frame = CGRectMake(0, 0, kToolButtonWidth, kToolButtonWidth);
-        editButton.layer.cornerRadius = kToolButtonWidth/2;
-        editButton.layer.masksToBounds = YES;
-        editButton.layer.borderColor = [UIColor clearColor].CGColor;
-        editButton.layer.borderWidth = 1;
-        editButton.backgroundColor = UIColorHex(0x00c3c4);
         editButton.tag = 100;
         [editButton addTarget:self action:@selector(clickFunction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:editButton];
         
         mainButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [mainButton setTitle:@"M" forState:UIControlStateNormal];
+        [mainButton setBackgroundImage:[UIImage imageNamed:@"note_icon_main"] forState:UIControlStateNormal];
         mainButton.frame = CGRectMake(0, 0, kMainButtonWidth, kMainButtonWidth);
-        mainButton.layer.cornerRadius = kMainButtonWidth/2;
-        mainButton.layer.borderColor = [UIColor clearColor].CGColor;
-        mainButton.layer.borderWidth = 1;
-        mainButton.layer.shadowOpacity = 0.5;// 阴影透明度
-        mainButton.layer.shadowColor = [UIColor lightGrayColor].CGColor;// 阴影的颜色
-        mainButton.layer.shadowRadius = 3;// 阴影扩散的范围控制
-        mainButton.layer.shadowOffset  = CGSizeMake(2, 2);// 阴影的范围
-        mainButton.backgroundColor = UIColorHex(0x00c3c4);
+//        mainButton.layer.cornerRadius = kMainButtonWidth/2;
+//        mainButton.layer.borderColor = [UIColor clearColor].CGColor;
+//        mainButton.layer.borderWidth = 1;
+//        mainButton.layer.shadowOpacity = 0.5;// 阴影透明度
+//        mainButton.layer.shadowColor = [UIColor lightGrayColor].CGColor;// 阴影的颜色
+//        mainButton.layer.shadowRadius = 3;// 阴影扩散的范围控制
+//        mainButton.layer.shadowOffset  = CGSizeMake(2, 2);// 阴影的范围
+//        mainButton.backgroundColor = UIColorHex(0x00c3c4);
         [mainButton addTarget:self action:@selector(clickMainAction:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:mainButton];
+        
+        self.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
     }
     return  self;
 }
