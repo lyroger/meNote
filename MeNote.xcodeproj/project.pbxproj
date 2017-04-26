@@ -1867,8 +1867,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lysoft.menote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "67524e8c-68a0-4b2f-aac5-14ec7f5fb598";
-				PROVISIONING_PROFILE_SPECIFIER = lySoftDemoDev;
+				PROVISIONING_PROFILE = "b8312434-1d2d-499c-ac1d-e5816645cc5b";
+				PROVISIONING_PROFILE_SPECIFIER = JiCe_Development;
 			};
 			name = Debug;
 		};
@@ -1884,8 +1884,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lysoft.menote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "67524e8c-68a0-4b2f-aac5-14ec7f5fb598";
-				PROVISIONING_PROFILE_SPECIFIER = lySoftDemoDev;
+				PROVISIONING_PROFILE = "b8312434-1d2d-499c-ac1d-e5816645cc5b";
+				PROVISIONING_PROFILE_SPECIFIER = JiCe_Development;
 			};
 			name = Release;
 		};
