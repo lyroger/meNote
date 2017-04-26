@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0144EB3D9DA5BE0BD06512B0 /* libPods-MeNoteUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 187C4207798A42DECD41C514 /* libPods-MeNoteUITests.a */; };
+		A704E3F91EAF242300029E6B /* MNBottomTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A704E3F81EAF242300029E6B /* MNBottomTitleButton.m */; };
 		A72E2AAB1EA99AE2009A7066 /* MNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72E2AAA1EA99AE2009A7066 /* MNNavigationController.m */; };
 		A72E2AAE1EA99D38009A7066 /* MNLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72E2AAD1EA99D38009A7066 /* MNLoginViewController.m */; };
 		A72E2AB11EA99DEE009A7066 /* MNNewNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72E2AB01EA99DEE009A7066 /* MNNewNoteViewController.m */; };
@@ -177,6 +178,8 @@
 		783733AA40E8923876C0573D /* libPods-MeNote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MeNote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9804AF3799175021F3971B65 /* Pods-MeNoteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeNoteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeNoteTests/Pods-MeNoteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		99FB44049347194E04313673 /* Pods-MeNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeNote.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeNote/Pods-MeNote.release.xcconfig"; sourceTree = "<group>"; };
+		A704E3F71EAF242300029E6B /* MNBottomTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNBottomTitleButton.h; sourceTree = "<group>"; };
+		A704E3F81EAF242300029E6B /* MNBottomTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNBottomTitleButton.m; sourceTree = "<group>"; };
 		A72E2AA91EA99AE2009A7066 /* MNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNNavigationController.h; sourceTree = "<group>"; };
 		A72E2AAA1EA99AE2009A7066 /* MNNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNNavigationController.m; sourceTree = "<group>"; };
 		A72E2AAC1EA99D38009A7066 /* MNLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNLoginViewController.h; sourceTree = "<group>"; };
@@ -673,6 +676,8 @@
 		A75746A31EA890C5008FDC6A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A704E3F71EAF242300029E6B /* MNBottomTitleButton.h */,
+				A704E3F81EAF242300029E6B /* MNBottomTitleButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1645,6 +1650,7 @@
 				A75748141EA8968F008FDC6A /* UITabBar+Badge.m in Sources */,
 				A75748091EA8968F008FDC6A /* UIImage+RemoteSize.m in Sources */,
 				A75747C81EA8968F008FDC6A /* NSDictionary+JSONString.m in Sources */,
+				A704E3F91EAF242300029E6B /* MNBottomTitleButton.m in Sources */,
 				A75747F61EA8968F008FDC6A /* UIButton+CountDown.m in Sources */,
 				A75748051EA8968F008FDC6A /* UIImage+Color.m in Sources */,
 				A75748081EA8968F008FDC6A /* UIImage+Orientation.m in Sources */,
@@ -1867,7 +1873,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lysoft.menote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b8312434-1d2d-499c-ac1d-e5816645cc5b";
+				PROVISIONING_PROFILE = "85afce57-9a40-48a1-a606-0f99e3f9906d";
 				PROVISIONING_PROFILE_SPECIFIER = JiCe_Development;
 			};
 			name = Debug;
@@ -1884,7 +1890,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lysoft.menote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b8312434-1d2d-499c-ac1d-e5816645cc5b";
+				PROVISIONING_PROFILE = "85afce57-9a40-48a1-a606-0f99e3f9906d";
 				PROVISIONING_PROFILE_SPECIFIER = JiCe_Development;
 			};
 			name = Release;

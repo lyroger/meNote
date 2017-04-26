@@ -8,6 +8,8 @@
 
 #import "MNLoginViewController.h"
 #import "MNForgetPwdViewController.h"
+#import "MNRegisterViewController.h"
+#import "MNBottomTitleButton.h"
 
 @interface MNLoginViewController ()<UITextFieldDelegate>
 {
@@ -18,6 +20,8 @@
     
     UIView *loginActionContentView;
     UIButton *loginButton;
+    
+    UIView *loginOtherContentView;
 }
 
 @property (nonatomic, strong) UIButton *btnLogin;
@@ -33,25 +37,10 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
 }
 
 - (void)loadSubView
@@ -66,7 +55,8 @@
     
     //加载logo
     UIImageView *logoImage = [[UIImageView alloc] init];
-    logoImage.image = [UIImage imageNamed:@"icon_login_logo"];
+    logoImage.contentMode = UIViewContentModeScaleAspectFit;
+    logoImage.image = [UIImage imageNamed:@"login_icon_logo"];
     [loginContentView addSubview:logoImage];
     
     //加载账号密码输入框
@@ -92,25 +82,27 @@
     
     NSString *username = [MNUserInfo shareUserInfo].userAcount;
     userTextField = [UITextField new];
-    userTextField.placeholder = @"账号";
+    userTextField.placeholder = @"输入手机号";
     userTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
     userTextField.returnKeyType = UIReturnKeyNext;
     userTextField.delegate = self;
     userTextField.text = username;
-    userTextField.font = kTextFont;
+    userTextField.tintColor = UIColorHex(0x6dffd0);
+    userTextField.font = kFontPingFangRegularSize(16);
     userTextField.textColor = UIColorHex(0x666666);
     [accountInputContent addSubview:userTextField];
     
     
     NSString *password = [[MNUserInfo shareUserInfo] getPassword];
     pwdTextField = [UITextField new];
-    pwdTextField.placeholder = @"密码";
+    pwdTextField.placeholder = @"输入密码";
     pwdTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
     pwdTextField.secureTextEntry = YES;
     pwdTextField.returnKeyType = UIReturnKeyDone;
     pwdTextField.delegate = self;
     pwdTextField.text = password;
-    pwdTextField.font = kTextFont;
+    pwdTextField.tintColor = UIColorHex(0x6dffd0);
+    pwdTextField.font = kFontPingFangRegularSize(16);
     pwdTextField.textColor = UIColorHex(0x666666);
     [accountInputContent addSubview:pwdTextField];
     
@@ -121,11 +113,12 @@
     [loginContentView addSubview:loginActionContentView];
     
     loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [loginButton setBackgroundImage:[UIImage imageWithColor:UIColorHex_Alpha(0x02B0F0, 0.39)] forState:UIControlStateDisabled];
-    [loginButton setBackgroundImage:[UIImage imageWithColor:UIColorHex_Alpha(0x02B0F0, 1)] forState:UIControlStateNormal];
-    [loginButton setBackgroundImage:[UIImage imageWithColor:UIColorHex_Alpha(0x02B0F0, 1)] forState:UIControlStateSelected];
+    [loginButton setTitleEdgeInsets:UIEdgeInsetsMake(-5, 0, 0, 0)];
+    [loginButton setBackgroundImage:[UIImage imageWithColor:UIColorHex(0xcccccc)] forState:UIControlStateDisabled];
+    [loginButton setBackgroundImage:[UIImage imageNamed:@"login_icon_login"] forState:UIControlStateNormal];
+    [loginButton setBackgroundImage:[UIImage imageNamed:@"login_icon_login"] forState:UIControlStateHighlighted];
     
-    loginButton.layer.cornerRadius = 22;
+    loginButton.layer.cornerRadius = 24;
     loginButton.layer.borderColor = [UIColor clearColor].CGColor;
     loginButton.layer.borderWidth = 1;
     loginButton.layer.masksToBounds = YES;
@@ -133,7 +126,7 @@
     [loginButton addTarget:self action:@selector(loginAction:) forControlEvents:UIControlEventTouchUpInside];
     [loginButton setTitle:@"登录" forState:UIControlStateNormal];
     loginButton.enabled = NO;
-    loginButton.titleLabel.font = kFontSize(18);
+    loginButton.titleLabel.font = kFontPingFangMediumSize(18);
     [loginActionContentView addSubview:loginButton];
     
     if (username.length > 0 && password.length > 0) {
@@ -142,31 +135,62 @@
         loginButton.enabled = NO;
     }
     
+    UIButton *registerButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    registerButton.backgroundColor = [UIColor clearColor];
+    registerButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [registerButton setTitleColor:UIColorHex(0x38DDC2) forState:UIControlStateNormal];
+    [registerButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+    registerButton.titleLabel.font = kFontPingFangMediumSize(16);
+    [registerButton setTitle:@"立即注册" forState:UIControlStateNormal];
+    [registerButton addTarget:self action:@selector(registerUserInfo) forControlEvents:UIControlEventTouchUpInside];
+    [loginActionContentView addSubview:registerButton];
+    
     
     UIButton *forgotPasswordButton = [UIButton buttonWithType:UIButtonTypeCustom];
     forgotPasswordButton.backgroundColor = [UIColor clearColor];
     forgotPasswordButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    [forgotPasswordButton setTitleColor:UIColorHex(0xCCCCCC) forState:UIControlStateNormal];
+    [forgotPasswordButton setTitleColor:UIColorHex(0x888888) forState:UIControlStateNormal];
     [forgotPasswordButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
-    forgotPasswordButton.titleLabel.font = kTextFont;
+    forgotPasswordButton.titleLabel.font = kFontPingFangMediumSize(16);
     [forgotPasswordButton setTitle:@"忘记密码?" forState:UIControlStateNormal];
     [forgotPasswordButton addTarget:self action:@selector(forgetPassword) forControlEvents:UIControlEventTouchUpInside];
     [loginActionContentView addSubview:forgotPasswordButton];
     
+    
+    loginOtherContentView = [UIView new];
+    [self.view addSubview:loginOtherContentView];
+    
+    MNBottomTitleButton *weiButton = [MNBottomTitleButton new];
+    [weiButton.button setBackgroundImage:[UIImage imageNamed:@"login_icon_weixin"] forState:UIControlStateNormal];
+    weiButton.label.text = @"微信登录";
+    [weiButton.button addTarget:self action:@selector(loginByOther:) forControlEvents:UIControlEventTouchUpInside];
+    [loginOtherContentView addSubview:weiButton];
+    
+    MNBottomTitleButton *qqButton = [MNBottomTitleButton new];
+    [qqButton.button setBackgroundImage:[UIImage imageNamed:@"login_icon_qq"] forState:UIControlStateNormal];
+    qqButton.label.text = @"QQ登录";
+    [qqButton.button addTarget:self action:@selector(loginByOther:) forControlEvents:UIControlEventTouchUpInside];
+    [loginOtherContentView addSubview:qqButton];
+    
+    MNBottomTitleButton *weiboButton = [MNBottomTitleButton new];
+    [weiboButton.button setBackgroundImage:[UIImage imageNamed:@"login_icon_weibo"] forState:UIControlStateNormal];
+    weiboButton.label.text = @"微博登录";
+    [weiboButton.button addTarget:self action:@selector(loginByOther:) forControlEvents:UIControlEventTouchUpInside];
+    [loginOtherContentView addSubview:weiboButton];
     /**
      *  布局
      */
     [logoImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@(75*ScreenMutiple6));
-        make.size.mas_equalTo(CGSizeMake(120, 125));
+        make.top.equalTo(@(100*ScreenMutiple6));
+        make.size.mas_equalTo(CGSizeMake(146, 36));
         make.centerX.mas_equalTo(self.view.mas_centerX);
     }];
     
     [accountInputContent mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@(15));
-        make.right.equalTo(@(-15));
-        make.top.mas_equalTo(logoImage.mas_bottom).mas_offset(40*ScreenMutiple6);
-        make.height.equalTo(@(100));
+        make.left.equalTo(@(40));
+        make.right.equalTo(@(-40));
+        make.top.mas_equalTo(logoImage.mas_bottom).mas_offset(40);
+        make.height.equalTo(@(140));
     }];
     
     [accountLine mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -185,47 +209,77 @@
     
     [accountImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@(12));
-        make.size.mas_equalTo(CGSizeMake(22, 22));
-        make.top.mas_equalTo(17);
+        make.size.mas_equalTo(CGSizeMake(25, 25));
+        make.top.equalTo(@(24));
     }];
     
     [pwdImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@(12));
-        make.size.mas_equalTo(CGSizeMake(22, 22));
-        make.bottom.mas_equalTo(-16);
+        make.size.mas_equalTo(CGSizeMake(25, 25));
+        make.bottom.mas_equalTo(-24);
     }];
     
     [userTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(accountImage.mas_right).offset(12);
-        make.top.mas_equalTo(7);
-        make.height.mas_equalTo(40);
+        make.left.equalTo(accountImage.mas_right).offset(12);
+        make.centerY.equalTo(accountImage).offset(2);
+        make.height.mas_equalTo(44);
         make.right.mas_equalTo(-12);
     }];
     
     [pwdTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(pwdImage.mas_right).offset(12);
-        make.bottom.mas_equalTo(-6);
-        make.height.mas_equalTo(40);
+        make.left.equalTo(pwdImage.mas_right).offset(12);
+        make.centerY.equalTo(pwdImage).offset(1);
+        make.height.mas_equalTo(44);
         make.right.mas_equalTo(-12);
     }];
     
     //登录按钮及记住密码层
     [loginActionContentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(accountInputContent.mas_bottom).offset(40);
-        make.left.mas_equalTo(15);
-        make.right.mas_equalTo(-15);
+        make.top.mas_equalTo(accountInputContent.mas_bottom).offset(50);
+        make.left.equalTo(accountInputContent);
+        make.right.equalTo(accountInputContent);
         make.height.mas_equalTo(90);
     }];
     
     [loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.mas_equalTo(0);
-        make.height.mas_equalTo(44);
+        make.height.mas_equalTo(48);
+    }];
+    
+    [registerButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.bottom.mas_equalTo(-11);
+        make.height.mas_equalTo(20);
     }];
     
     [forgotPasswordButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(0);
         make.bottom.mas_equalTo(-11);
         make.height.mas_equalTo(20);
+    }];
+    
+    [loginOtherContentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.view).offset(-30);
+        make.left.equalTo(accountInputContent);
+        make.right.equalTo(accountInputContent);
+        make.height.equalTo(@84);
+    }];
+    
+    //第三方登录
+    [weiButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.bottom.equalTo(@0);
+        make.width.equalTo(@58);
+    }];
+    
+    [qqButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.equalTo(@0);
+        make.centerX.equalTo(loginOtherContentView.mas_centerX);
+        make.width.equalTo(weiButton);
+    }];
+    
+    [weiboButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.top.bottom.equalTo(@0);
+        make.width.equalTo(weiButton);
     }];
 }
 
@@ -243,6 +297,10 @@
     [self hideKeyboard];
     NSString *username = [userTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSString *password = [pwdTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+    if (self.loginCompleteBlock) {
+        self.loginCompleteBlock(YES);
+    }
     
     if (username.length > 0 && password.length > 0) {
         DLog(@"账号密码格式正确");
@@ -274,6 +332,26 @@
         DLog(@"请输入8位长度的密码");
         
     }
+}
+
+//第三方登录
+- (void)loginByOther:(UIButton*)button
+{
+    if (button.tag == 100) {
+        //微信
+    } else if (button.tag == 101) {
+        //qq
+    } else if (button.tag == 102) {
+        //微博
+        
+    }
+        
+}
+
+- (void)registerUserInfo
+{
+    MNRegisterViewController *registerVC = [[MNRegisterViewController alloc] init];
+    [self.navigationController pushViewController:registerVC animated:YES];
 }
 
 - (void)forgetPassword
@@ -342,5 +420,15 @@
     [UIView animateWithDuration:duration animations:^{
         loginContentView.frame = CGRectMake(0, -offsetY, self.view.frame.size.width, self.view.frame.size.height);
     }];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 @end

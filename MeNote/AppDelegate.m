@@ -21,6 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+//    sleep(1);
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self authorizeOperation];
@@ -33,7 +34,7 @@
     //加载本地用户信息
     [[MNUserInfo shareUserInfo] getUserInfoFromLocal];
     
-    [MNUserInfo shareUserInfo].token = @"aweifawenfalef";
+//    [MNUserInfo shareUserInfo].token = @"aweifawenfalef";
     //不需要加载启动页则判断是否需要登录
     if (![MNUserInfo shareUserInfo].token.length) {
         self.loginVC = [[MNLoginViewController alloc] init];
