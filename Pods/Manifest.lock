@@ -29,7 +29,7 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - BmobSDK (2.1.4)
+  - BmobSDK (2.1.7)
   - DACircularProgress (2.3.1)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
@@ -37,7 +37,7 @@ PODS:
     - SQLCipher
   - FMDB/standard (2.6.2)
   - HZActivityIndicatorView (0.0.1)
-  - IQKeyboardManager (4.0.8)
+  - IQKeyboardManager (4.0.9)
   - LKDBHelper (2.4.1):
     - FMDB
   - Masonry (1.0.2)
@@ -67,7 +67,7 @@ PODS:
     - SQLCipher/common
   - SSKeychain (1.4.1)
   - SSZipArchive (0.3.3)
-  - TZImagePickerController (1.7.8)
+  - TZImagePickerController (1.7.9)
 
 DEPENDENCIES:
   - AFNetworking
@@ -75,7 +75,7 @@ DEPENDENCIES:
   - BmobSDK
   - FMDB/SQLCipher
   - HZActivityIndicatorView
-  - IQKeyboardManager
+  - IQKeyboardManager (~> 4.0.9)
   - LKDBHelper
   - Masonry
   - MBProgressHUD
@@ -93,11 +93,11 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
-  BmobSDK: 9cfacfe985029c4b4857ccd4b32c315f10581c79
+  BmobSDK: 23cbfbde2a7cfaeb0c8a946953a266fe5211e7f6
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   HZActivityIndicatorView: c866c50275ab126bbb5333d71760565c205aaf35
-  IQKeyboardManager: 1a8189fa153bf09044355ee0ad36826f6767e7f7
+  IQKeyboardManager: 322c7405df3eb5f7e50dede32ea937bf3d4364e0
   LKDBHelper: 531581fa6a7d0f14236cc028ce0d277bca73436a
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
@@ -111,8 +111,8 @@ SPEC CHECKSUMS:
   SQLCipher: 43d12c0eb9c57fb438749618fc3ce0065509a559
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
   SSZipArchive: 2cf2a6d3ac9f03252b7d96f93728b9b983be9afb
-  TZImagePickerController: 87a138ae5d585225aaa6c8abe2cface0f0ad19dd
+  TZImagePickerController: 0a8ff228d287ebdd7d485e8c42a2a932894f1fba
 
-PODFILE CHECKSUM: e7dc92f87f983d9b49ca58cbeec4ea7501cfc11a
+PODFILE CHECKSUM: 3c7bfab21b165eadb77285f8ee8a25ec4af6840f
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1

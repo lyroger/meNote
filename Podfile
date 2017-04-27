@@ -3,15 +3,15 @@
 
 target 'MeNote' do
     
-    target 'MeNoteTests' do
-        inherit! :search_paths
-        # Pods for testing
-    end
-
-    target 'MeNoteUITests' do
-        inherit! :search_paths
-        # Pods for testing
-    end
+#    target 'MeNoteTests' do
+#        inherit! :search_paths
+#        # Pods for testing
+#    end
+#
+#    target 'MeNoteUITests' do
+#        inherit! :search_paths
+#        # Pods for testing
+#    end
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
@@ -37,7 +37,7 @@ target 'MeNote' do
   #图库多选
   pod 'TZImagePickerController'
   pod 'SSZipArchive', '~> 0.3.2'
-  pod 'IQKeyboardManager'
+  pod 'IQKeyboardManager', '~>4.0.9'
   #代码工具
   #pod 'iOS-Categories', :podspec => './podspec/iOS-Categories.podspec'
   pod 'BlocksKit'

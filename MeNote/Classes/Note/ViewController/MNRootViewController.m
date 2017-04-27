@@ -14,6 +14,7 @@
 #import "MNNewNoteViewController.h"
 #import "MNNoteDetailViewController.h"
 #import "MNUserCenterViewController.h"
+#import "MNNavigationController.h"
 
 @interface MNRootViewController ()<UITableViewDelegate,UITableViewDataSource,MNFloatToolViewDelegete>
 {
@@ -101,7 +102,9 @@
     if (itemIndex == 0) {
         // 写心情
         MNNewNoteViewController *newNoteVC = [[MNNewNoteViewController alloc] init];
-        [self.navigationController pushViewController:newNoteVC animated:YES];
+        MNNavigationController *newNoteNav = [[MNNavigationController alloc] initWithRootViewController:newNoteVC];
+        [self presentViewController:newNoteNav animated:YES completion:nil];
+        
     } else if (itemIndex == 1) {
         // 我的
         MNUserCenterViewController *userCenterVC = [[MNUserCenterViewController alloc] init];

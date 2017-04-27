@@ -114,9 +114,8 @@
     
     loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [loginButton setTitleEdgeInsets:UIEdgeInsetsMake(-5, 0, 0, 0)];
-    [loginButton setBackgroundImage:[UIImage imageWithColor:UIColorHex(0xcccccc)] forState:UIControlStateDisabled];
-    [loginButton setBackgroundImage:[UIImage imageNamed:@"login_icon_login"] forState:UIControlStateNormal];
-    [loginButton setBackgroundImage:[UIImage imageNamed:@"login_icon_login"] forState:UIControlStateHighlighted];
+    [loginButton setBackgroundImage:[UIImage imageNamed:@"login_icon_off"] forState:UIControlStateDisabled];
+    [loginButton setBackgroundImage:[UIImage imageNamed:@"login_icon_on"] forState:UIControlStateNormal];
     
     loginButton.layer.cornerRadius = 24;
     loginButton.layer.borderColor = [UIColor clearColor].CGColor;
