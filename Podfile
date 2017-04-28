@@ -37,7 +37,7 @@ target 'MeNote' do
   #图库多选
   pod 'TZImagePickerController'
   pod 'SSZipArchive', '~> 0.3.2'
-  pod 'IQKeyboardManager', '~>4.0.9'
+#  pod 'IQKeyboardManager', '~>4.0.9'
   #代码工具
   #pod 'iOS-Categories', :podspec => './podspec/iOS-Categories.podspec'
   pod 'BlocksKit'

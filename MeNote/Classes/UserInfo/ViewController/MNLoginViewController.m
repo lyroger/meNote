@@ -157,7 +157,7 @@
     
     
     loginOtherContentView = [UIView new];
-    [self.view addSubview:loginOtherContentView];
+    [loginContentView addSubview:loginOtherContentView];
     
     MNBottomTitleButton *weiButton = [MNBottomTitleButton new];
     [weiButton.button setBackgroundImage:[UIImage imageNamed:@"login_icon_weixin"] forState:UIControlStateNormal];

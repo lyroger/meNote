@@ -37,7 +37,6 @@ PODS:
     - SQLCipher
   - FMDB/standard (2.6.2)
   - HZActivityIndicatorView (0.0.1)
-  - IQKeyboardManager (4.0.9)
   - LKDBHelper (2.4.1):
     - FMDB
   - Masonry (1.0.2)
@@ -75,7 +74,6 @@ DEPENDENCIES:
   - BmobSDK
   - FMDB/SQLCipher
   - HZActivityIndicatorView
-  - IQKeyboardManager (~> 4.0.9)
   - LKDBHelper
   - Masonry
   - MBProgressHUD
@@ -97,7 +95,6 @@ SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   HZActivityIndicatorView: c866c50275ab126bbb5333d71760565c205aaf35
-  IQKeyboardManager: 322c7405df3eb5f7e50dede32ea937bf3d4364e0
   LKDBHelper: 531581fa6a7d0f14236cc028ce0d277bca73436a
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
@@ -113,6 +110,6 @@ SPEC CHECKSUMS:
   SSZipArchive: 2cf2a6d3ac9f03252b7d96f93728b9b983be9afb
   TZImagePickerController: 0a8ff228d287ebdd7d485e8c42a2a932894f1fba
 
-PODFILE CHECKSUM: 3c7bfab21b165eadb77285f8ee8a25ec4af6840f
+PODFILE CHECKSUM: fc4282709c7784c32dc6708cd0f253af5bd4d71d
 
 COCOAPODS: 1.2.1
