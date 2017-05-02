@@ -14,7 +14,7 @@
 @property (nonatomic, strong) UITextView            *editTextView;
 @property (nonatomic, strong) NSMutableDictionary   *mutImgDict;
 @property (nonatomic, strong) NSMutableArray        *mutImgArray;
-@property (nonatomic, strong) NSMutableArray        *imgArray;//最终确定照片URl数组
+@property (nonatomic, strong) NSMutableArray        *imgURLArray;//最终确定照片URl数组
 @property (nonatomic, assign) NSInteger             selectTextIndex;//textview光标位置
 
 @end
@@ -69,12 +69,47 @@
         _editTextView.tintColor = UIColorHex(0x6dffd0);
         _editTextView.textContainerInset = UIEdgeInsetsMake(15, 10, 10, 10);
         _editTextView.delegate = self;
+        //解决输入图片，文字后，中途插入文字光标自动到最后一行的问题。
+        _editTextView.layoutManager.allowsNonContiguousLayout = NO;
         _editTextView.returnKeyType = UIReturnKeyDone;
         [self.view addSubview:_editTextView];
         
         self.selectTextIndex = 0;
         [self notificationRegister];
+        
+        
+        _editTextView.editable = NO;
+        [self loadDemoDetail];
     }
+}
+
+- (void)loadDemoDetail
+{
+    NSArray *imageNames = @[@"note_image1",@"note_image2",@"note_image2",@"note_image2"];
+    
+    NSString *text = @"近体诗那份里空间发哦恩菲埃里克非农呢那份林森非非里克非农呢那份林森非非里克非农呢那份林森非非里克非农呢那份林森非非里克非农呢那份林森非非里克非农呢那份林森非非";
+    
+    _editTextView.text = text;
+    
+    NSMutableAttributedString *attributedString = [_editTextView.attributedText mutableCopy];
+    
+    for (int i = 0; i < imageNames.count; i++) {
+        UIImage *image = [UIImage imageNamed:imageNames[i]];
+        NSTextAttachment* textAttachment = [[NSTextAttachment alloc] init];
+        textAttachment.image = image;
+        textAttachment.bounds = CGRectMake(0, 0, _editTextView.frame.size.width-30, [self getImgHeightWithImg:image]);
+        NSAttributedString* imageAttachment = [NSAttributedString attributedStringWithAttachment:textAttachment];
+        [attributedString insertAttributedString:imageAttachment atIndex:10 + i*2];
+    }
+    
+    
+    //设置行间距
+    NSMutableParagraphStyle * paragraphStyle1 = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle1 setLineSpacing:8];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle1 range:NSMakeRange(0, attributedString.length)];
+    
+    _editTextView.layoutManager.allowsNonContiguousLayout = NO;
+    _editTextView.attributedText = attributedString;
 }
 
 //取消回调
@@ -98,12 +133,13 @@
     [paragraphStyle1 setLineSpacing:8];
     [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle1 range:NSMakeRange(0, attributedString.length)];
     
+    _editTextView.layoutManager.allowsNonContiguousLayout = NO;
     _editTextView.attributedText = attributedString;
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    if ([text isEqualToString:@"\n"]) {
+        if ([text isEqualToString:@"\n"]) {
         [textView resignFirstResponder];
         return NO;
     }
@@ -124,7 +160,7 @@
     for (int i = 0; i <= textStr.length - 4; i ++) {
         NSString *tempStr = [textStr substringWithRange:NSMakeRange(i, 4)];
         if ([tempStr isEqualToString:@"[图片]"]) {
-            NSString *imgStr = [NSString stringWithFormat:@"<img src = '%@'/>",self.imgArray[index]];
+            NSString *imgStr = [NSString stringWithFormat:@"<img src = '%@'/>",self.imgURLArray[index]];
             textStr = [textStr stringByReplacingCharactersInRange:NSMakeRange(i, 4) withString:imgStr];
             index ++;
         }
@@ -140,21 +176,39 @@
         img = [UIImage imageWithData:data];
         [self uploadPicture:img];
         NSTextAttachment* textAttachment = [[NSTextAttachment alloc] init];
-        textAttachment.image = img;
-        textAttachment.bounds = CGRectMake(0, 0, _editTextView.frame.size.width-30, [self getImgHeightWithImg:img]);
+        textAttachment.image = [self resizeImageWithImage:img];
+        CGFloat imageHeight = [self getImgHeightWithImg:img];
+        textAttachment.bounds = CGRectMake(0, 0, _editTextView.frame.size.width-30, imageHeight>300?300:imageHeight);
         NSAttributedString* imageAttachment = [NSAttributedString attributedStringWithAttachment:textAttachment];
         
         NSMutableAttributedString *attributedString = [_editTextView.attributedText mutableCopy];
         [attributedString insertAttributedString:imageAttachment atIndex:self.selectTextIndex];
+        
+        //添加图片后，自动换行
+        NSAttributedString *nextLine = [[NSAttributedString alloc] initWithString:@" \n"];
+        [attributedString appendAttributedString:nextLine];
         
         //设置行间距
         NSMutableParagraphStyle * paragraphStyle1 = [[NSMutableParagraphStyle alloc] init];
         [paragraphStyle1 setLineSpacing:8];
         [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle1 range:NSMakeRange(0, attributedString.length)];
         
+        _editTextView.layoutManager.allowsNonContiguousLayout = NO;
         _editTextView.attributedText = attributedString;
         
+        [_editTextView becomeFirstResponder];
     }];
+}
+
+- (UIImage *)resizeImageWithImage:(UIImage*)image
+{
+    CGSize size = image.size;
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(size.width, size.height>300?300:size.height), false, 0);
+    [image drawInRect:CGRectMake(0, 2, size.width, size.height>300?300:size.height)];
+    UIImage *resizeImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return resizeImage;
 }
 
 #pragma mark - 富文本转换操作
@@ -190,7 +244,7 @@
         for (int j = 0; j < keyArray.count; j ++) {
             UIImage *myImg = [self.mutImgDict valueForKey:keyArray[j]];
             if (myImg == img) {
-                [self.imgArray addObject:keyArray[j]];
+                [self.imgURLArray addObject:keyArray[j]];
             }
         }
     }
@@ -345,12 +399,12 @@
     }
     return _mutImgDict;
 }
-- (NSMutableArray *)imgArray
+- (NSMutableArray *)imgURLArray
 {
-    if (!_imgArray) {
-        _imgArray = [NSMutableArray array];
+    if (!_imgURLArray) {
+        _imgURLArray = [NSMutableArray array];
     }
-    return _imgArray;
+    return _imgURLArray;
 }
 
 - (void)didReceiveMemoryWarning {
