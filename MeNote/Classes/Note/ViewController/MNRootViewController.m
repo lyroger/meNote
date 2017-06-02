@@ -16,6 +16,8 @@
 #import "MNUserCenterViewController.h"
 #import "MNNavigationController.h"
 
+#import <UserNotifications/UserNotifications.h>
+
 @interface MNRootViewController ()<UITableViewDelegate,UITableViewDataSource,MNFloatToolViewDelegete>
 {
     
@@ -106,7 +108,7 @@
         [self presentViewController:newNoteNav animated:YES completion:nil];
         
     } else if (itemIndex == 1) {
-        // 我的
+        // 我的        
         MNUserCenterViewController *userCenterVC = [[MNUserCenterViewController alloc] init];
         [self.navigationController pushViewController:userCenterVC animated:YES];
     }

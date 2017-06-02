@@ -8,14 +8,18 @@
 
 #import "MNNewNoteViewController.h"
 #import "MNSubTitleView.h"
+#import "MNEditTextView.h"
+#import "MSPickerImageModel.h"
 
 @interface MNNewNoteViewController ()<UITextViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
-@property (nonatomic, strong) UITextView            *editTextView;
+@property (nonatomic, strong) MNEditTextView        *editTextView;
 @property (nonatomic, strong) NSMutableDictionary   *mutImgDict;
 @property (nonatomic, strong) NSMutableArray        *mutImgArray;
 @property (nonatomic, strong) NSMutableArray        *imgURLArray;//最终确定照片URl数组
 @property (nonatomic, assign) NSInteger             selectTextIndex;//textview光标位置
+
+@property (nonatomic, strong) NSMutableArray        *imageObjs;
 
 @end
 
@@ -63,7 +67,7 @@
 - (void)loadTextView
 {
     if (!_editTextView) {
-        _editTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
+        _editTextView = [[MNEditTextView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
         _editTextView.textColor = UIColorHex(0x4A4A4A);
         _editTextView.font = kFontPingFangRegularSize(16);
         _editTextView.tintColor = UIColorHex(0x6dffd0);
@@ -77,11 +81,19 @@
         self.selectTextIndex = 0;
         [self notificationRegister];
         
+        [_editTextView addTapEvent];
         
-        _editTextView.editable = NO;
-        [self loadDemoDetail];
+//        _editTextView.editable = NO;
+//        [self loadDemoDetail];
     }
 }
+
+//- (void)tapTextView:(UITapGestureRecognizer*)gesture
+//{
+//    CGPoint location = [gesture locationInView:_editTextView];
+//    CGFloat fraction = 0;
+//    NSInteger characterIndex = [_editTextView.layoutManager  characterIndexForPoint:location inTextContainer:_editTextView.textContainer fractionOfDistanceBetweenInsertionPoints:&fraction];
+//}
 
 - (void)loadDemoDetail
 {
@@ -137,12 +149,37 @@
     _editTextView.attributedText = attributedString;
 }
 
+- (void)updateImageObjTouchDeletePoint
+{
+    
+}
+
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-        if ([text isEqualToString:@"\n"]) {
+    NSLog(@"range = %@ text = %@，textView.text.length = %zd",NSStringFromRange(range),text,textView.text.length);
+    if (text.length <= 0) {
+        //删除操作
+        NSLog(@"文本框删除操作--------");
+        //排除只点击了删除键盘，但未删除任何东西也会触发该事件
+        if (range.length>0) {
+            // 1.如果删除的是图片，找出删除的图片，从数组中移除。更改没有移除的图片在富文本中的索引
+            [MSPickerImageModel removeAndUpdateImageObj:range array:self.imageObjs];
+        }
+    } else {
+        //增加操作
+        NSLog(@"文本框增加操作++++++++");
+        // 二、添加文字时需处理
+        range = NSMakeRange(range.location, text.length);
+        [MSPickerImageModel updateImageObj:range array:self.imageObjs];
+    }
+
+    NSLog(@"self.imageObjs = %@",self.imageObjs);
+    if ([text isEqualToString:@"\n"]) {
         [textView resignFirstResponder];
         return NO;
     }
+    
+    [MSPickerImageModel updateImageObjTouchDeleteRect:self.editTextView.attributedText array:self.imageObjs];
     return YES;
 }
 
@@ -172,20 +209,34 @@
 {
     [self dismissViewControllerAnimated:YES completion:^{
         UIImage * img = [info objectForKey:UIImagePickerControllerOriginalImage];
-        NSData *data = UIImageJPEGRepresentation(img,0.1);
-        img = [UIImage imageWithData:data];
+//        NSData *data = UIImageJPEGRepresentation(img,0.1);
+//        img = [UIImage imageWithData:data];
         [self uploadPicture:img];
+        UIImage *showImage = [self resizeImageWithImage:img];
         NSTextAttachment* textAttachment = [[NSTextAttachment alloc] init];
-        textAttachment.image = [self resizeImageWithImage:img];
+        textAttachment.image = showImage;
         CGFloat imageHeight = [self getImgHeightWithImg:img];
-        textAttachment.bounds = CGRectMake(0, 0, _editTextView.frame.size.width-30, imageHeight>300?300:imageHeight);
+        CGFloat drawHeight = imageHeight>300?300:imageHeight;
+        textAttachment.bounds = CGRectMake(0, 0, _editTextView.frame.size.width-30, drawHeight);
+        
+        MSPickerImageModel *pickerImageModel = [[MSPickerImageModel alloc] init];
+        pickerImageModel.imageIndex = self.selectTextIndex;
+        pickerImageModel.image = showImage;
+        pickerImageModel.imageHeight = imageHeight;
+        [self.imageObjs addObject:pickerImageModel];
+        NSLog(@"self.imageObjs = %@",self.imageObjs);
+        
         NSAttributedString* imageAttachment = [NSAttributedString attributedStringWithAttachment:textAttachment];
         
         NSMutableAttributedString *attributedString = [_editTextView.attributedText mutableCopy];
         [attributedString insertAttributedString:imageAttachment atIndex:self.selectTextIndex];
         
-        //添加图片后，自动换行
-        NSAttributedString *nextLine = [[NSAttributedString alloc] initWithString:@" \n"];
+        
+        NSMutableAttributedString *nextLine = [[NSMutableAttributedString alloc] init];
+        //设置字体样式及大小
+        [nextLine addAttribute:NSFontAttributeName value:kFontPingFangRegularSize(16) range:NSMakeRange(0, nextLine.length)];
+        //设置字体颜色
+        [nextLine addAttribute:NSForegroundColorAttributeName value:UIColorHex(0x4A4A4A) range:NSMakeRange(0, nextLine.length)];
         [attributedString appendAttributedString:nextLine];
         
         //设置行间距
@@ -196,18 +247,40 @@
         _editTextView.layoutManager.allowsNonContiguousLayout = NO;
         _editTextView.attributedText = attributedString;
         
+        [MSPickerImageModel updateImageObjTouchDeleteRect:self.editTextView.attributedText array:self.imageObjs];
         [_editTextView becomeFirstResponder];
     }];
 }
 
 - (UIImage *)resizeImageWithImage:(UIImage*)image
 {
-    CGSize size = image.size;
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(size.width, size.height>300?300:size.height), false, 0);
-    [image drawInRect:CGRectMake(0, 2, size.width, size.height>300?300:size.height)];
+    CGFloat maxWidth = _editTextView.size.width - 30;
+    CGFloat imageScaleHeight = [self getImgHeightWithImg:image];
+    CGFloat drawHeight = imageScaleHeight>300?300:imageScaleHeight;
+    
+    CGFloat clipY = 0;
+    if (imageScaleHeight>300) {
+        clipY = (imageScaleHeight-300)/2;
+    }
+    
+    //生成画布秒板
+    UIGraphicsBeginImageContext(CGSizeMake(maxWidth, drawHeight));
+
+    //裁剪区域
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, maxWidth, drawHeight) cornerRadius:6];
+    [path addClip];
+
+    //绘制图片区域
+    [image drawInRect:CGRectMake(0, -clipY, maxWidth, imageScaleHeight)];
+    
+    //贴上删除按钮图片
+    UIImage *deleteImage = [UIImage imageNamed:@"icon_remove"];
+    [deleteImage drawInRect:CGRectMake(maxWidth - 30, 10, 20, 20)];
+    
+    //生成最终展示图片
     UIImage *resizeImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
+
     return resizeImage;
 }
 
@@ -405,6 +478,14 @@
         _imgURLArray = [NSMutableArray array];
     }
     return _imgURLArray;
+}
+
+- (NSMutableArray*)imageObjs
+{
+    if (!_imageObjs) {
+        _imageObjs = [NSMutableArray array];
+    }
+    return _imageObjs;
 }
 
 - (void)didReceiveMemoryWarning {

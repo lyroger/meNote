@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A704E3F91EAF242300029E6B /* MNBottomTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A704E3F81EAF242300029E6B /* MNBottomTitleButton.m */; };
+		A7186FD51EBC324D00DE4B67 /* MNEditTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7186FD41EBC324D00DE4B67 /* MNEditTextView.m */; };
 		A72E2AAB1EA99AE2009A7066 /* MNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72E2AAA1EA99AE2009A7066 /* MNNavigationController.m */; };
 		A72E2AAE1EA99D38009A7066 /* MNLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72E2AAD1EA99D38009A7066 /* MNLoginViewController.m */; };
 		A72E2AB11EA99DEE009A7066 /* MNNewNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72E2AB01EA99DEE009A7066 /* MNNewNoteViewController.m */; };
@@ -146,11 +147,12 @@
 		A75748591EA8A2FE008FDC6A /* StatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A75748511EA8A2FE008FDC6A /* StatusModel.m */; };
 		A757485F1EA8A712008FDC6A /* MNMUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A757485E1EA8A712008FDC6A /* MNMUserInfo.m */; };
 		A75748651EA8ABE8008FDC6A /* MyActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = A75748641EA8ABE8008FDC6A /* MyActivityIndicatorView.m */; };
+		A7B8739E1EE10524007105AD /* MSPickerImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B8739D1EE10524007105AD /* MSPickerImageModel.m */; };
+		A7B873A11EE10545007105AD /* MNNoteListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B873A01EE10545007105AD /* MNNoteListModel.m */; };
 		A7CC6C711EAE36DC0089E4D8 /* MNUserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CC6C701EAE36DC0089E4D8 /* MNUserCenterViewController.m */; };
 		A7CC6C781EB091600089E4D8 /* MNSubTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7CC6C771EB091600089E4D8 /* MNSubTitleView.m */; };
 		A7E709501EAD9FE000A224B9 /* MNNoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E7094F1EAD9FE000A224B9 /* MNNoteTableViewCell.m */; };
 		A7E709531EADA31200A224B9 /* MNNoteSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E709521EADA31200A224B9 /* MNNoteSectionHeaderView.m */; };
-		A7E709561EADA90900A224B9 /* MNNoteListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E709551EADA90900A224B9 /* MNNoteListModel.m */; };
 		E394E689630C105F3EFCAE05 /* libPods-MeNote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 783733AA40E8923876C0573D /* libPods-MeNote.a */; };
 /* End PBXBuildFile section */
 
@@ -177,6 +179,8 @@
 		99FB44049347194E04313673 /* Pods-MeNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeNote.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeNote/Pods-MeNote.release.xcconfig"; sourceTree = "<group>"; };
 		A704E3F71EAF242300029E6B /* MNBottomTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNBottomTitleButton.h; sourceTree = "<group>"; };
 		A704E3F81EAF242300029E6B /* MNBottomTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNBottomTitleButton.m; sourceTree = "<group>"; };
+		A7186FD31EBC324D00DE4B67 /* MNEditTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNEditTextView.h; sourceTree = "<group>"; };
+		A7186FD41EBC324D00DE4B67 /* MNEditTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNEditTextView.m; sourceTree = "<group>"; };
 		A72E2AA91EA99AE2009A7066 /* MNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNNavigationController.h; sourceTree = "<group>"; };
 		A72E2AAA1EA99AE2009A7066 /* MNNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNNavigationController.m; sourceTree = "<group>"; };
 		A72E2AAC1EA99D38009A7066 /* MNLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNLoginViewController.h; sourceTree = "<group>"; };
@@ -468,6 +472,10 @@
 		A75748621EA8A85B008FDC6A /* Common_GlobalKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common_GlobalKey.h; sourceTree = "<group>"; };
 		A75748631EA8ABE8008FDC6A /* MyActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyActivityIndicatorView.h; sourceTree = "<group>"; };
 		A75748641EA8ABE8008FDC6A /* MyActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyActivityIndicatorView.m; sourceTree = "<group>"; };
+		A7B8739C1EE10524007105AD /* MSPickerImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPickerImageModel.h; sourceTree = "<group>"; };
+		A7B8739D1EE10524007105AD /* MSPickerImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPickerImageModel.m; sourceTree = "<group>"; };
+		A7B8739F1EE10545007105AD /* MNNoteListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNNoteListModel.h; sourceTree = "<group>"; };
+		A7B873A01EE10545007105AD /* MNNoteListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNNoteListModel.m; sourceTree = "<group>"; };
 		A7CC6C6F1EAE36DC0089E4D8 /* MNUserCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNUserCenterViewController.h; sourceTree = "<group>"; };
 		A7CC6C701EAE36DC0089E4D8 /* MNUserCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNUserCenterViewController.m; sourceTree = "<group>"; };
 		A7CC6C761EB091600089E4D8 /* MNSubTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNSubTitleView.h; sourceTree = "<group>"; };
@@ -476,8 +484,6 @@
 		A7E7094F1EAD9FE000A224B9 /* MNNoteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNNoteTableViewCell.m; sourceTree = "<group>"; };
 		A7E709511EADA31200A224B9 /* MNNoteSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNNoteSectionHeaderView.h; sourceTree = "<group>"; };
 		A7E709521EADA31200A224B9 /* MNNoteSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNNoteSectionHeaderView.m; sourceTree = "<group>"; };
-		A7E709541EADA90900A224B9 /* MNNoteListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNNoteListModel.h; path = MeNote/Classes/Note/View/MNNoteListModel.h; sourceTree = SOURCE_ROOT; };
-		A7E709551EADA90900A224B9 /* MNNoteListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNNoteListModel.m; path = MeNote/Classes/Note/View/MNNoteListModel.m; sourceTree = SOURCE_ROOT; };
 		B489829A9BD35AB5450095AC /* Pods-MeNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeNote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeNote/Pods-MeNote.debug.xcconfig"; sourceTree = "<group>"; };
 		EA19F26FB8A832E6A413BBD8 /* libPods-MeNoteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MeNoteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -613,8 +619,10 @@
 		A757469E1EA890C5008FDC6A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A7E709541EADA90900A224B9 /* MNNoteListModel.h */,
-				A7E709551EADA90900A224B9 /* MNNoteListModel.m */,
+				A7B8739F1EE10545007105AD /* MNNoteListModel.h */,
+				A7B873A01EE10545007105AD /* MNNoteListModel.m */,
+				A7B8739C1EE10524007105AD /* MSPickerImageModel.h */,
+				A7B8739D1EE10524007105AD /* MSPickerImageModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -630,6 +638,8 @@
 				A7E709521EADA31200A224B9 /* MNNoteSectionHeaderView.m */,
 				A7CC6C761EB091600089E4D8 /* MNSubTitleView.h */,
 				A7CC6C771EB091600089E4D8 /* MNSubTitleView.m */,
+				A7186FD31EBC324D00DE4B67 /* MNEditTextView.h */,
+				A7186FD41EBC324D00DE4B67 /* MNEditTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1516,7 +1526,6 @@
 				A75748261EA8968F008FDC6A /* UIWindow+Hierarchy.m in Sources */,
 				A75747EC1EA8968F008FDC6A /* NSURL+Param.m in Sources */,
 				A75748181EA8968F008FDC6A /* UITextView+PlaceHolder.m in Sources */,
-				A7E709561EADA90900A224B9 /* MNNoteListModel.m in Sources */,
 				A757483F1EA8A2B3008FDC6A /* MicAssistant.m in Sources */,
 				A757481D1EA8968F008FDC6A /* UIView+Find.m in Sources */,
 				A75747DD1EA8968F008FDC6A /* NSString+Hash.m in Sources */,
@@ -1541,6 +1550,7 @@
 				A75746671EA8607C008FDC6A /* main.m in Sources */,
 				A75746B01EA89264008FDC6A /* CSErrorTips.m in Sources */,
 				A75747F71EA8968F008FDC6A /* UIButton+ImageTitleStyle.m in Sources */,
+				A7186FD51EBC324D00DE4B67 /* MNEditTextView.m in Sources */,
 				A75748101EA8968F008FDC6A /* UINavigationItem+Lock.m in Sources */,
 				A757480F1EA8968F008FDC6A /* UINavigationController+StackManager.m in Sources */,
 				A75748041EA8968F008FDC6A /* UIImage+BlurImage.m in Sources */,
@@ -1560,6 +1570,7 @@
 				A75747D71EA8968F008FDC6A /* NSObject+Reflection.m in Sources */,
 				A75746A71EA89138008FDC6A /* MNRootViewController.m in Sources */,
 				A75747CD1EA8968F008FDC6A /* NSMutableAttributedString+ColorAndFontSize.m in Sources */,
+				A7B8739E1EE10524007105AD /* MSPickerImageModel.m in Sources */,
 				A75748581EA8A2FE008FDC6A /* NSString+BaseModel.m in Sources */,
 				A75747FA1EA8968F008FDC6A /* UIButton+MiddleAligning.m in Sources */,
 				A75747BE1EA8968F008FDC6A /* NSData+APNSToken.m in Sources */,
@@ -1630,6 +1641,7 @@
 				A75748121EA8968F008FDC6A /* UIScreen+Frame.m in Sources */,
 				A75747C21EA8968F008FDC6A /* NSDate+Formatter.m in Sources */,
 				A75747CE1EA8968F008FDC6A /* NSNotificationCenter+MainThread.m in Sources */,
+				A7B873A11EE10545007105AD /* MNNoteListModel.m in Sources */,
 				A75747D91EA8968F008FDC6A /* NSString+Base64.m in Sources */,
 				A75748171EA8968F008FDC6A /* UITextField+Select.m in Sources */,
 				A75747E31EA8968F008FDC6A /* NSString+RegexCategory.m in Sources */,
