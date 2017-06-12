@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MNEditTextViewDelegate;
 @interface MNEditTextView : UITextView
 
+@property (nonatomic,weak) id<MNEditTextViewDelegate> touchDelegate;
+
 - (void)addTapEvent;
+@end
+
+
+@protocol MNEditTextViewDelegate <NSObject>
+
+- (void)didTapEditTextViewEvent:(MNEditTextView*)view touchPoint:(CGPoint)point;
+
 @end

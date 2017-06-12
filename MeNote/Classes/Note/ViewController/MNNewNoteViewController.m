@@ -11,7 +11,7 @@
 #import "MNEditTextView.h"
 #import "MSPickerImageModel.h"
 
-@interface MNNewNoteViewController ()<UITextViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface MNNewNoteViewController ()<UITextViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,MNEditTextViewDelegate>
 
 @property (nonatomic, strong) MNEditTextView        *editTextView;
 @property (nonatomic, strong) NSMutableDictionary   *mutImgDict;
@@ -73,6 +73,7 @@
         _editTextView.tintColor = UIColorHex(0x6dffd0);
         _editTextView.textContainerInset = UIEdgeInsetsMake(15, 10, 10, 10);
         _editTextView.delegate = self;
+        _editTextView.touchDelegate = self;
         //解决输入图片，文字后，中途插入文字光标自动到最后一行的问题。
         _editTextView.layoutManager.allowsNonContiguousLayout = NO;
         _editTextView.returnKeyType = UIReturnKeyDone;
@@ -149,11 +150,6 @@
     _editTextView.attributedText = attributedString;
 }
 
-- (void)updateImageObjTouchDeletePoint
-{
-    
-}
-
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
     NSLog(@"range = %@ text = %@，textView.text.length = %zd",NSStringFromRange(range),text,textView.text.length);
@@ -181,6 +177,24 @@
     
     [MSPickerImageModel updateImageObjTouchDeleteRect:self.editTextView.attributedText array:self.imageObjs];
     return YES;
+}
+
+- (void)didTapEditTextViewEvent:(MNEditTextView *)view touchPoint:(CGPoint)point
+{
+    for (int i = 0; i < self.imageObjs.count; i++) {
+        MSPickerImageModel *model = [self.imageObjs objectAtIndex:i];
+        if (CGRectContainsPoint(model.deleteTouchRect,point)) {
+            NSRange range = NSMakeRange(model.imageIndex, 1);
+            [MSPickerImageModel removeAndUpdateImageObj:range array:self.imageObjs];
+//            [self.imageObjs removeObject:model];
+            NSMutableAttributedString *mutAttributeStr = [[NSMutableAttributedString alloc] initWithAttributedString:self.editTextView.attributedText];
+            [mutAttributeStr replaceCharactersInRange:range withString:@""];
+            self.editTextView.attributedText = mutAttributeStr;
+//            self.editTextView.attributedText = [self.editTextView.attributedText replaceCharactersInRange: with:]
+            [MSPickerImageModel updateImageObjTouchDeleteRect:self.editTextView.attributedText array:self.imageObjs];
+            break;
+        }
+    }
 }
 
 - (BOOL)textView:(UITextView *)textView shouldInteractWithTextAttachment:(NSTextAttachment *)textAttachment inRange:(NSRange)characterRange
@@ -252,37 +266,6 @@
     }];
 }
 
-- (UIImage *)resizeImageWithImage:(UIImage*)image
-{
-    CGFloat maxWidth = _editTextView.size.width - 30;
-    CGFloat imageScaleHeight = [self getImgHeightWithImg:image];
-    CGFloat drawHeight = imageScaleHeight>300?300:imageScaleHeight;
-    
-    CGFloat clipY = 0;
-    if (imageScaleHeight>300) {
-        clipY = (imageScaleHeight-300)/2;
-    }
-    
-    //生成画布秒板
-    UIGraphicsBeginImageContext(CGSizeMake(maxWidth, drawHeight));
-
-    //裁剪区域
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, maxWidth, drawHeight) cornerRadius:6];
-    [path addClip];
-
-    //绘制图片区域
-    [image drawInRect:CGRectMake(0, -clipY, maxWidth, imageScaleHeight)];
-    
-    //贴上删除按钮图片
-    UIImage *deleteImage = [UIImage imageNamed:@"icon_remove"];
-    [deleteImage drawInRect:CGRectMake(maxWidth - 30, 10, 20, 20)];
-    
-    //生成最终展示图片
-    UIImage *resizeImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-
-    return resizeImage;
-}
 
 #pragma mark - 富文本转换操作
 /** 将富文本转换为带有图片标志的纯文本*/
@@ -366,6 +349,39 @@
      [self.textView becomeFirstResponder];
      */
 }
+
+- (UIImage *)resizeImageWithImage:(UIImage*)image
+{
+    CGFloat maxWidth = _editTextView.size.width - 30;
+    CGFloat imageScaleHeight = [self getImgHeightWithImg:image];
+    CGFloat drawHeight = imageScaleHeight>300?300:imageScaleHeight;
+    
+    CGFloat clipY = 0;
+    if (imageScaleHeight>300) {
+        clipY = (imageScaleHeight-300)/2;
+    }
+    
+    //生成画布秒板
+    UIGraphicsBeginImageContext(CGSizeMake(maxWidth, drawHeight));
+    
+    //裁剪区域
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, maxWidth, drawHeight) cornerRadius:6];
+    [path addClip];
+    
+    //绘制图片区域
+    [image drawInRect:CGRectMake(0, -clipY, maxWidth, imageScaleHeight)];
+    
+    //贴上删除按钮图片
+    UIImage *deleteImage = [UIImage imageNamed:@"icon_remove"];
+    [deleteImage drawInRect:CGRectMake(maxWidth - 30, 10, 20, 20)];
+    
+    //生成最终展示图片
+    UIImage *resizeImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return resizeImage;
+}
+
 //根据屏幕宽度适配高度
 - (CGFloat)getImgHeightWithImg:(UIImage *)img
 {

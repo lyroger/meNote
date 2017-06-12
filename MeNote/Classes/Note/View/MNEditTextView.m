@@ -36,15 +36,19 @@
 {
     NSLog(@"point = %@",NSStringFromCGPoint(point));
     UIView *result = [super hitTest:point withEvent:event];
-    CGPoint userPoint = [self.hitTestView convertPoint:point fromView:self];
-    if ([self.hitTestView pointInside:userPoint withEvent:event]) {
+    
+    if (self.touchDelegate && [self.touchDelegate respondsToSelector:@selector(didTapEditTextViewEvent:touchPoint:)]) {
+        [self.touchDelegate didTapEditTextViewEvent:self touchPoint:point];
+    }
+//    CGPoint userPoint = [self.hitTestView convertPoint:point fromView:self];
+//    if ([self.hitTestView pointInside:userPoint withEvent:event]) {
 //    CGFloat fraction = 0;
 //    NSInteger characterIndex = [self.layoutManager  characterIndexForPoint:userPoint inTextContainer:self.textContainer fractionOfDistanceBetweenInsertionPoints:&fraction];
-        
-        [self enumerateAttribute];
-        
-        return self.hitTestView;
-    }
+//        
+//        [self enumerateAttribute];
+//        
+//        return self.hitTestView;
+//    }
     return result;
 }
 
